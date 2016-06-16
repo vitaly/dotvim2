@@ -85,9 +85,10 @@ function _save()
 {
   local name="$1"
   local escaped_value=$(printf %q "$2")
+  local comment="$( echo "$3"; echo ": $4" )"
 
-  if [ -n "$DESC" ]; then
-    echo "$DESC" | sed -e 's/^/# /' >> "$TMPOUT"
+  if [ -n "$comment" ]; then
+    echo "$comment" | sed -e 's/^/# /' >> "$TMPOUT"
   fi
   echo $name=$escaped_value >> "$TMPOUT"
   echo >> "$TMPOUT"
@@ -132,11 +133,13 @@ function ask()
       # make sure its not used on next iteration, e.g. if its invalid
       unset "$name"
     else
-      read a; [ -z "$a" ] && a="$default"
+      read a
+      [ -z "$a" ] && a="$default"
     fi
+    nc
 
     if _validate "$kind" "$a"; then
-      _save "$name" "$(_canonic "$kind" "$a")"
+      _save "$name" "$(_canonic "$kind" "$a")" "$DESC" "$prompt"
       break
     else
       yellow -e "'$a' ${READ}is not a valid '${kind}'"
