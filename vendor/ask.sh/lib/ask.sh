@@ -47,9 +47,9 @@ function desc()
 
 function _prompt()
 {
-  echo -en "${GREEN}${1}"
-  [ -n "$2" ] && echo -en " ${CYAN}[$2]"
-  echo -en ": ${YELLOW}"
+  green -n "${1}"
+  [ -n "$2" ] && cyan -n " [$2]"
+  green -n ": "
 }
 
 function _validate()
@@ -99,7 +99,6 @@ function ask()
 {
   [ -n "$TMPOUT" ] || raise "seems like you forgot to call init"
 
-
   usage="ask TYPE NAME PROMPT [DEFAULT]"
   [ -n "$1" ] || raise $usage
   local kind="$1"; shift
@@ -115,7 +114,8 @@ function ask()
   echo
 
   if [ -n "$DESC" ]; then
-    echo -e "${BOLD}${BLUE}$DESC"
+    bold
+    blue "$DESC"
   fi
 
   local a
@@ -124,6 +124,7 @@ function ask()
 
     local v=$(value "$name")
 
+    yellow
     if [ -z "$ASK_FORCE" -a -n "$v" ]; then
       # try to use previously defined value
       a="$v"
@@ -138,7 +139,7 @@ function ask()
       _save "$name" "$(_canonic "$kind" "$a")"
       break
     else
-      echo -e "${YELLOW}'$a' ${READ}is not a valid '${kind}'${NC}"
+      yellow -e "'$a' ${READ}is not a valid '${kind}'"
     fi
   done
 

@@ -14,4 +14,4 @@ fi
 is_true ask_next && ask any another "another variable"
 
 finish
-info "\nDOME"
+info -e "\nDOME"

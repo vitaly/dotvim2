@@ -20,4 +20,4 @@ END
 ask bool ok "nice?" y
 
 finish
-info "\nDOME"
+info -e "\nDOME"

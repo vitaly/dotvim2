@@ -26,4 +26,4 @@ fi >> "$CUSTOM"
 mv -fv "$CUSTOM" "foo.vim"
 
 finish
-info "\nDOME"
+info -e "\nDOME"
