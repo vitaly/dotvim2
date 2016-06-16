@@ -13,5 +13,12 @@ fi
 # or we can use the helper
 is_true ask_next && ask any another "another variable"
 
+# or use a combined ask_bool version
+if ask_bool foo "foo?" y; then
+  echo FOO
+else
+  echo NO FOO
+fi
+
 finish
 info -e "\nDOME"
