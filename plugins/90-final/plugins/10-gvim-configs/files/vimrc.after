@@ -1,0 +1,3 @@
+if has('gui_running')
+  source ~/.vim/gvimrc.after
+end

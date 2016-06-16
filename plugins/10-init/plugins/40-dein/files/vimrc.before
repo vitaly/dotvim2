@@ -1,0 +1,6 @@
+call dein#end()
+
+if dein#check_install()
+  echo "installing plugins"
+  call dein#install()
+endif

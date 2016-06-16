@@ -1,0 +1,7 @@
+set nocompatible
+
+source ~/.vim/vimrc.plugins
+source ~/.vim/vimrc.before
+source ~/.vim/vimrc.bindings
+" ~/.vim/vimrc.after is loaded from ./after/plugin/after.vim after all plugins
+" are loaded
