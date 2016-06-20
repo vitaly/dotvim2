@@ -17,7 +17,7 @@ you can use
 heredocs for easy multiline
 descriptions
 END
-ask bool ok "nice?" y
+ask bool isit "nice?" y
 
 finish
 info -e "\nDOME"

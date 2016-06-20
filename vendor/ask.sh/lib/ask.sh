@@ -110,7 +110,6 @@ function ask()
   [ -n "$1" ] || raise $usage
   local prompt="$1"; shift
 
-  local default="$1"
 
   echo
 
@@ -119,27 +118,40 @@ function ask()
     blue "$DESC"
   fi
 
+  local default="$1"
+  local current=$(value "$name")
+
   local a
   while true; do
-    _prompt "$prompt" "$default"
 
-    local v=$(value "$name")
+    # use the previously selected value as the default when re-configuring
+    if [ -n "$current" ]; then
+      local v="$current"
+      unset current
+    else
+      local v="$default"
+      unset default
+    fi
+
+    _prompt "$prompt" "$v"
 
     yellow
     if [ -z "$ASK_FORCE" -a -n "$v" ]; then
-      # try to use previously defined value
+      # try to use currently active default
       a="$v"
       echo "$a"
-      # make sure its not used on next iteration, e.g. if its invalid
-      unset "$name"
+
     else
       read a
-      [ -z "$a" ] && a="$default"
+      [ -z "$a" ] && a="$v"
     fi
     nc
 
     if _validate "$kind" "$a"; then
-      _save "$name" "$(_canonic "$kind" "$a")" "$DESC" "$prompt"
+      local canonic="$(_canonic "$kind" "$a")"
+      echo -n "> "
+      red "$canonic"
+      _save "$name" "$canonic" "$DESC" "$prompt"
       break
     else
       yellow -e "'$a' ${READ}is not a valid '${kind}'"
