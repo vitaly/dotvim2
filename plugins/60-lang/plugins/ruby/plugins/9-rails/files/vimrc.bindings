@@ -1,0 +1,2 @@
+" vim-rspec
+map <Leader>r :call RunNearestSpec()<CR>

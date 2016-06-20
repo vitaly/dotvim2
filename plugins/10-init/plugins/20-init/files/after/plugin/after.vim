@@ -7,4 +7,3 @@ endif
 let g:after_vim_loaded = 1
 
 source ~/.vim/vimrc.after
-source ~/.vim/gvimrc.after

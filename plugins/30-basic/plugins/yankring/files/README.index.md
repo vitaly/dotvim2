@@ -1,1 +1,1 @@
-* [YankRing.vim](#YankRing.vim)
+  * [YankRing.vim](#YankRing.vim)

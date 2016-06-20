@@ -1,0 +1,5 @@
+" nerdtree
+" Ctrl-P to Display the file browser tree
+nmap <C-P> :NERDTreeTabsToggle<CR>
+" ,p to show current file in the tree
+nmap <leader>p :NERDTreeFind<CR>

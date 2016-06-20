@@ -6,12 +6,14 @@ function banner()
     *.md)
       ;;
     *.rb|*.sh|.gitignore)
+      echo
       echo "# $1 -------------------"
       echo
       ;;
     *vimrc|*vimrc.*|*.vim)
-        echo "\" $1 -------------------"
-        echo
+      echo
+      echo "\" $1 -------------------"
+      echo
       ;;
     *)
       ;;
@@ -32,7 +34,6 @@ function copy_files()
     (
       banner "$s"  "$f"
       cat "$s/$f"
-      echo
     ) >> "$d"
   done
 }
@@ -44,7 +45,7 @@ function load()
     name="${1//[-\/ ]/_}"
     prompt="$(cat "$1/prompt")"
     if [ -f "$1/desc" ]; then
-      cat "$1/desc" | desc
+      desc "$(cat "$1/desc")"
     fi
     if ! ask_bool $name "$prompt" y; then
       return

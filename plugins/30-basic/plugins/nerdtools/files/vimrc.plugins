@@ -1,3 +1,0 @@
-call dein#add('scrooloose/nerdtree')
-call dein#add('jistr/vim-nerdtree-tabs')
-call dein#add('scrooloose/nerdcommenter')

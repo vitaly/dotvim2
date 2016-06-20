@@ -1,3 +1,27 @@
+# Dotvim v2
+
+## What?
+
+This is the second incarnation of my dotvim configuration
+
+V1 can be found [here](https://github.com/astrails/dotvim)
+
+## Why
+
+Over the years V1 became too bloated, and hard to update and fix. Once
+something went-in, its hard to remove it, since somebody might be using it.
+
+Also, people kept sending me patches with their favorite plugins, which might
+not necessarily be useful for everybody.
+
+The result is that the configuration became way too big and slow.
+
+## Status
+
+This is an early work-in-progress. I started using it already, but it might be too early for general consumption.
+
+## TBD
+
 # load order
 
 - vimrc
@@ -20,18 +44,18 @@ To make sure each such files will be re-created appropriately upon each install
 run, they have to be cleaned up.. `000-init` plugin takes care of the standard
 ones, if you need a new one, you might need to clean it up your self. place it
 in `000=-....` plugin directory to make sure it is called before any other
-pluging tries to add content to it
+plugin tries to add content to it
 
 # plugins directory structure
 
 A plugin is a directory with a `plugin.sh` file or `files` directory in it
 
-if `plugin.sh` files exists, it is run, and it will determin the rest of the
+if `plugin.sh` files exists, it is run, and it will determine the rest of the
 behaviour, otherwise the files from the `files` directory are copied using the
 `copy_files` helper
 
 `copy_files [dir]` will detect and copy/apppend files from the dir into the
-installlation dir
+installation dir
 
 
 ## example files structure
@@ -51,7 +75,7 @@ installlation dir
 
 The plugins are loaded according to their sort order.
 
-by conventions the following order is used
+by convention the following order is used
 
 
 - 00x   - cleanup
