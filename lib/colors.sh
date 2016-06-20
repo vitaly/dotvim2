@@ -11,18 +11,26 @@ MAGENTA='\033[35m'
 CYAN='\033[36m'
 WHITE='\033[37m'
 
-function nc()      { echo -en $NC;      }
-
-function bold()    { echo -en $BOLD;    }
-
-function black()   { echo -en $BLACK;   }
-function red()     { echo -en $RED;     }
-function green()   { echo -en $GREEN;   }
-function yellow()  { echo -en $YELLOW;  }
-function blue()    { echo -en $BLUE;    }
-function magenta() { echo -en $MAGENTA; }
-function cyan()    { echo -en $CYAN;    }
-function white()   { echo -en $WHITE;   }
-
 BG_RED='\033[41m'
 BG_YELLOW='\033[43m'
+
+function nc()      { echo -en $NC; }
+
+function with_color()
+{
+  echo -en $1; shift
+  [ -z "$*" ] && return
+
+  echo "$@"; nc
+}
+
+function bold()    { with_color $BOLD "$@" ; }
+
+function black()   { with_color $BLACK "$@" ; }
+function red()     { with_color $RED "$@" ; }
+function green()   { with_color $GREEN "$@" ; }
+function yellow()  { with_color $YELLOW "$@" ; }
+function blue()    { with_color $BLUE "$@" ; }
+function magenta() { with_color $MAGENTA "$@" ; }
+function cyan()    { with_color $CYAN "$@" ; }
+function white()   { with_color $WHITE "$@" ; }
