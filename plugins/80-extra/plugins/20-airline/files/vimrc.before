@@ -1,0 +1,3 @@
+let g:airline_powerline_fonts=1
+let g:airline_theme='light' " dark simple badwolf solarized solarized2
+set noshowmode
