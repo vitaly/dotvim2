@@ -41,16 +41,24 @@ function copy_files()
 function load()
 {
   yellow "$1"
+
   if [ -f "$1/prompt" ]; then
-    name="${1//[-\/ ]/_}"
-    prompt="$(cat "$1/prompt")"
     if [ -f "$1/desc" ]; then
       desc "$(cat "$1/desc")"
     fi
-    if ! ask_bool $name "$prompt" y; then
+
+    exec 5< "$1/prompt"
+    read name <&5
+    read prompt <&5
+    if ! read default <&5; then
+        default=y
+    fi
+
+    if ! ask_bool $name "$prompt" "$default"; then
       return
     fi
   fi
+
   if [ -d "$1/files" ]; then copy_files "$1/files"; fi
   if [ -d "$1/plugins" ]; then load_all "$1/plugins/"*; fi
   if [ -f "$1/install.sh" ]; then source "$1/install.sh"; fi

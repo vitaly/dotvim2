@@ -7,7 +7,7 @@ function init_git()
 
 function check_git()
 {
-  if ask_bool init_git "initialize git in $VIM_DIR ?" y; then
+  if ask_bool init_git "initialize git?" y; then
     if [ ! -d "$VIM_DIR/.git" ]; then
       (cd "$VIM_DIR"; init_git)
     fi

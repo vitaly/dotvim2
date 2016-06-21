@@ -1,10 +1,13 @@
 export VIM_DIR ?= dist
 
-configure:
+configure: ${VIM_DIR}/.config
 	@bin/generate.sh
 
-reconfigure:
+reconfigure: ${VIM_DIR}/.config
 	@bin/generate.sh -f
+
+${VIM_DIR}/.config: .config
+	cp $@ $<
 
 install: configure
 	vim +'call dein#install()'
@@ -32,7 +35,7 @@ ycm-git: ${YCM_DIR}
 	git submodule update --init --recursive
 
 ycm-install: ycm-git
-	cd ${YCM_DIR} && ./install.py --clang-completer
+	cd ${YCM_DIR} && ./install.py --clang-completer --tern-completer
 
 completion: ycm-install
 
