@@ -124,26 +124,43 @@ function ask()
   local a
   while true; do
 
-    # use the previously selected value as the default when re-configuring
-    if [ -n "$current" ]; then
-      local v="$current"
-      unset current
-    else
-      local v="$default"
-      unset default
-    fi
-
-    _prompt "$prompt" "$v"
+    # in case of non-forced config, we can re-use the current value 'ONCE!' if
+    # it fails (e.g. invalid) we should ignore it on the next iteration
+    #
+    # in case of forced config, we should use the currently set value as a
+    # default, i.e. the value that will be used for simple 'ENTER' but we also
+    # want to choose it only once, and if its invalid, on the next run we want
+    # to preset the global default instead (but also only once
 
     yellow
-    if [ -z "$ASK_FORCE" -a -n "$v" ]; then
-      # try to use currently active default
-      a="$v"
+
+    if [ -z "$ASK_FORCE" -a -n "$current" ]; then
+      _prompt "$prompt" "$current"
+      a="$current"; unset current
       echo "$a"
 
     else
+      if [ -n "$current" ]; then
+        v="$current"
+      else
+        if [ -n "$default" ]; then
+          v="$default"
+        else
+          v=
+        fi
+      fi
+
+      _prompt "$prompt" "$v"
       read a
-      [ -z "$a" ] && a="$v"
+
+      if [ -z "$a" ]; then
+        a="$v"
+        if [ -n "$current" ]; then
+          unset current
+        else
+          unset default
+        fi
+      fi
     fi
     nc
 
