@@ -1,18 +1,32 @@
-function banner()
+function this_file()
 {
-  local fname="$(basename "$2")"
+  echo "${BASH_SOURCE[1]}"
+}
 
-  case "$fname" in
+function this_dir()
+{
+  dirname "${BASH_SOURCE[1]}"
+}
+
+# banner FILE LABEL
+# 'FILE' is used to determin type of banner
+function banner()
+
+{
+  local file="$1"
+  local label="$2"
+
+  case "$file" in
     *.md)
       ;;
-    *.rb|*.sh|.gitignore)
+    *.rb|*.sh|*.gitignore)
       echo
-      echo "# $1 -------------------"
+      echo "# $label -------------------"
       echo
       ;;
     *vimrc|*vimrc.*|*.vim)
       echo
-      echo "\" $1 -------------------"
+      echo "\" $label -------------------"
       echo
       ;;
     *)
@@ -20,21 +34,30 @@ function banner()
   esac
 }
 
+function append_to_file()
+{
+  local file="$1"
+  local label="$2"
+
+  local destination="${VIM_DIR}/${file}"
+
+  mkdir -pv "$(dirname "$destination")"
+
+  cyan "-- $file -> $destination"
+  (
+    banner "$file" "$label"
+    cat
+  ) >> "$destination"
+}
+
 # check if directory has known files and append their content to the target
 function copy_files()
 {
-  local s="$1"
-  blue $s
-  for f in $(cd "$s"; find . -type f); do
-    local d="${VIM_DIR}/$f"
+  local base="$1"
+  blue $base
 
-    mkdir -pv "$(dirname "$d")"
-
-    cyan "--- $s/$f"
-    (
-      banner "$s"  "$f"
-      cat "$s/$f"
-    ) >> "$d"
+  for f in $(cd "$base"; find . -type f); do
+    cat "$base/$f" | append_to_file "$f" "$base"
   done
 }
 
@@ -51,7 +74,7 @@ function load()
     read name <&5
     read prompt <&5
     if ! read default <&5; then
-        default=y
+        default=
     fi
 
     if ! ask_bool $name "$prompt" "$default"; then

@@ -6,8 +6,11 @@ configure: ${VIM_DIR}/.config
 reconfigure: ${VIM_DIR}/.config
 	@bin/generate.sh -f
 
+edit: ${VIM_DIR}/.config
+	@vim ${VIM_DIR}/.config
+
 ${VIM_DIR}/.config: .config
-	cp $@ $<
+	cp $< $@
 
 install: configure
 	vim +'call dein#install()'
@@ -31,8 +34,7 @@ ${YCM_DIR}:
 	git clone https://github.com/Valloric/YouCompleteMe.git YouCompleteMe
 
 ycm-git: ${YCM_DIR}
-	cd $<
-	git submodule update --init --recursive
+	cd $< && git submodule update --init --recursive
 
 ycm-install: ycm-git
 	cd ${YCM_DIR} && ./install.py --clang-completer --tern-completer

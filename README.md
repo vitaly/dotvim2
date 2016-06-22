@@ -44,17 +44,24 @@ During the installation a README file is generated in the destination directory.
 
 # load order
 
-- vimrc
-  - vimrc.plugins
-  - [gvimrc.plugins]
-  - [~/.vimrc.plugins]
-  - vimrc.before
-  - [gvimrc.before]
-  - [~/.vimrc.before]
-  - after/plugin/after.vim
-    - vimrc.after
-    - [gvimrc.after]
-    - [~/.vimrc.after]
+* vimrc
+  * vimrc.plugins
+    * gvimrc.plugins
+      * ~/.gvimrc.plugins
+    * ~/.vimrc.plugins
+  * vimrc.before
+    * gvimrc.before
+      * ~/.gvimrc.before
+    * ~/.vimrc.before
+  * after/plugin/after.vim
+    * vimrc.after
+      * vimrc.bindings
+        * gvimrc.bindings
+          * ~/.gvimrc.bindings
+        * ~/.vimrc.bindings
+      * gvimrc.after
+        * ~/.gvimrc.after
+      * ~/.vimrc.after
 
 each plugin can add con add content to files in the target vim directory by
 simply having the corresponding files present in the `plugin/files` directory
@@ -90,18 +97,18 @@ TBD
 
 ## example files structure
 
-    - plugins
-      - simple_directory_plugin
-        - files
-          - file_to_copy
-      - plugin_with_install_script
-        - files
-          - file_to_copy
-        - other_files
-          - other_files_to_copy
-        - install.sh
-        - plugins
-          - sub-plugin1
+    * plugins
+      * simple_directory_plugin
+        * files
+          * file_to_copy
+      * plugin_with_install_script
+        * files
+          * file_to_copy
+        * other_files
+          * other_files_to_copy
+        * install.sh
+        * plugins
+          * sub-plugin1
             ...
 
 ## plugin ordering
