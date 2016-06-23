@@ -1,0 +1,4 @@
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('chriskempson/tomorrow-theme', {'rtp': 'vim/'})
+call dein#add('tpope/vim-vividchalk')
+call dein#add('nanotech/jellybeans.vim')

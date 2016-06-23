@@ -1,5 +1,5 @@
 let g:ctrlp_map = '<leader>,'
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
 
 let g:ctrlp_clear_cache_on_exit = 1
 
@@ -15,6 +15,8 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard -c
 
 " open multiple files with <c-z> to mark and <c-o> to open. v - opening in
 " vertical splits; j - jump to first open buffer; r - open first in current buffer
-let g:ctrlp_open_multiple_files = 'vjr'
+let g:ctrlp_open_multiple_files = 'hjr'
 
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'mixed', 'line']
+
+let g:ctrlp_working_path_mode = 'ra'

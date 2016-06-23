@@ -44,6 +44,11 @@ function desc()
     DESC="`cat`"
   fi
 }
+ENUM=
+function enum()
+{
+  ENUM="$*"
+}
 
 function _prompt()
 {
@@ -52,6 +57,7 @@ function _prompt()
   green -n ": "
 }
 
+# _validate KIND VALUE
 function _validate()
 {
   case "$1" in
@@ -60,6 +66,7 @@ function _validate()
     word)  echo "$2" | grep -qiE '^[a-z]+$' ;;
     sym*)   echo "$2" | grep -qiE '^[a-z0-9_]+$' ;;
     simple) echo "$2" | grep -qiE '^[a-z0-9_ ]+$' ;;
+    enum) echo "$2" | grep -qE "$ENUM";;
     str*)  [ -n "$2" ] ;;
     any*)  true ;;
 
@@ -167,7 +174,6 @@ function ask()
     if _validate "$kind" "$a"; then
       local canonic="$(_canonic "$kind" "$a")"
       echo -n "> "
-      red "$canonic"
       _save "$name" "$canonic" "$DESC" "$prompt"
       break
     else
@@ -176,4 +182,5 @@ function ask()
   done
 
   DESC=
+  ENUM=
 }

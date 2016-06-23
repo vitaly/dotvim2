@@ -1,3 +1,19 @@
+function verbose()
+{
+  if [ -n "$VERBOSE" ]; then
+    true
+  else
+    false
+  fi
+}
+
+function v()
+{
+  if verbose; then
+    "$@"
+  fi
+}
+
 function this_file()
 {
   echo "${BASH_SOURCE[1]}"
@@ -43,7 +59,7 @@ function append_to_file()
 
   mkdir -pv "$(dirname "$destination")"
 
-  cyan "-- $file -> $destination"
+  v cyan "-- $file -> $destination"
   (
     banner "$file" "$label"
     cat
@@ -54,16 +70,17 @@ function append_to_file()
 function copy_files()
 {
   local base="$1"
-  blue $base
+  v blue $base
 
-  for f in $(cd "$base"; find . -type f); do
+  [ -d "$base" ] || die "directory $base not found"
+  for f in $(cd "$base" && find . -type f); do
     cat "$base/$f" | append_to_file "$f" "$base"
   done
 }
 
 function load()
 {
-  yellow "$1"
+  v yellow "$1"
 
   if [ -f "$1/prompt" ]; then
     if [ -f "$1/desc" ]; then

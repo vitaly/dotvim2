@@ -1,0 +1,2 @@
+
+call dein#add('utl.vim')

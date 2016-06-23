@@ -54,6 +54,6 @@
 
     * `,B` - toggle block style
 
-    > NOTE: thre is an unfortunate interaction with delimitMate, the opening
+    > NOTE: there is an unfortunate interaction with delimitMate, the opening
     > brase gets completed. i.e. you get `{} ... }`
 

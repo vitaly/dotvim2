@@ -6,6 +6,11 @@ if [ -z "$VIM_DIR" ]; then
   die "please define VIM_DIR"
 fi
 
+if [[ "-v" == "$1"  ]]; then
+  shift
+  VERBOSE=1
+fi
+
 init ${VIM_DIR}/.config
 
 source lib/common.sh

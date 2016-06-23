@@ -1,1 +1,0 @@
-call dein#add('chriskempson/tomorrow-theme', {'rtp': 'vim/'})

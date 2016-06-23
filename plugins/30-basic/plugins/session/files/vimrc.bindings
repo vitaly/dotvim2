@@ -1,0 +1,8 @@
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
+
+nmap <leader>SS :SaveSession
+nmap <leader>SO :OpenSession
+if has('gui_running')
+  nmap <leader>SR :RestartVim<CR>
+endif

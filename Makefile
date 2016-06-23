@@ -3,6 +3,9 @@ export VIM_DIR ?= dist
 configure: ${VIM_DIR}/.config
 	@bin/generate.sh
 
+vconfigure: ${VIM_DIR}/.config
+	@bin/generate.sh -v
+
 reconfigure: ${VIM_DIR}/.config
 	@bin/generate.sh -f
 
@@ -18,8 +21,7 @@ install: configure
 clean:
 	rm -rf ${VIM_DIR}/dein
 
-reinstall: clean generate
-	vim
+reinstall: clean configure
 
 update:
 	vim +'call dein#update()'
