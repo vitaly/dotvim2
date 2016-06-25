@@ -62,7 +62,7 @@ change you can see the exact difference.
 The main idea is that vim configuration is not a static file, but instead is
 generated from templates according to user input. Default generation directory
 is `dist` under the source tree, but you can change it by passing `VIM_DIR`
-environment variable. E.g. `VIM_DI=~/.dotvim2 make`
+environment variable. E.g. `VIM_DIR=~/.dotvim2 make`
 
 Then you can link your `~/.vim` to your old config or this one when you are
 playing with it.
