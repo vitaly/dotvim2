@@ -51,7 +51,7 @@ optional, and its actually trivial to make most any other part optional too.
 The modularity is achieved by switching from configuration files to
 configuration file templates and generators. You no longer use the project
 as-is, instead you run `make` in it, to generate your actual configuration in
-your directory of choice. You can (and its recommended) to keep this generated
+your directory of choice. You can (and its recommended to) keep this generated
 directory content in git as well, so that after every upgrade or configuration
 change you can see the exact difference.
 
