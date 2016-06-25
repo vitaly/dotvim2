@@ -85,23 +85,23 @@ directory. And example one can be seen [here](dist/README.md)
 
 * vimrc
   * vimrc.plugins
+    * ~/.vimrc.plugins
     * gvimrc.plugins
       * ~/.gvimrc.plugins
-    * ~/.vimrc.plugins
   * vimrc.before
+    * ~/.vimrc.before
     * gvimrc.before
       * ~/.gvimrc.before
-    * ~/.vimrc.before
   * << here all plugins are actually loaded >>
   * after/plugin/after.vim
     * vimrc.after
       * vimrc.bindings
+        * ~/.vimrc.bindings
         * gvimrc.bindings
           * ~/.gvimrc.bindings
-        * ~/.vimrc.bindings
+      * ~/.vimrc.after
       * gvimrc.after
         * ~/.gvimrc.after
-      * ~/.vimrc.after
 
 Each plugin can add content to files in the target vim directory by simply
 having the corresponding files present in the `plugin/files` directory
