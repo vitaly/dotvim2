@@ -6,7 +6,7 @@ guides : Indent-Guides
 lines  : Yggdroot/indentLine
 -      : none
 END
-ask enum visual_indent "Your choice?"
+ask enum visual_indent "Your choice?" lines
 
 case $visual_indent in
   guides|lines)

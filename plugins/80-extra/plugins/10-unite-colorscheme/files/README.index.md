@@ -1,1 +1,0 @@
-  * [unite-colorscheme](#unite-colorscheme)

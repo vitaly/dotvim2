@@ -13,7 +13,8 @@ edit: ${VIM_DIR}/.config
 	@vim ${VIM_DIR}/.config
 
 ${VIM_DIR}/.config: .config
-	cp $< $@
+	@mkdir -pv ${VIM_DIR}
+	@cp -v $< $@
 
 install: configure
 	vim +'call dein#install()'

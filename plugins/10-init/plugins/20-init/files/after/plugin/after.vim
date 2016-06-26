@@ -6,4 +6,5 @@ endif
 
 let g:after_vim_loaded = 1
 
+source ~/.vim/vimrc.bindings
 source ~/.vim/vimrc.after

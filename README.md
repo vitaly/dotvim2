@@ -6,6 +6,8 @@ This is the second incarnation of my dotvim configuration
 
 V1 can be found [here](https://github.com/astrails/dotvim)
 
+> **IMPORTANT:** Please see [Status](#status) section below.
+
 ## Why
 
 Over the years V1 became too bloated, and hard to update and fix. Once
@@ -35,13 +37,38 @@ So my goals for this v2 release are:
 
 ## Status
 
-This is an early work-in-progress. I started using it already, but it might be
-too early for general consumption.  That being said, it is actually useful
-already, and (at least in my experience) works better and faster then the old
-one.
+This is an early work-in-progress. I'm  still figuring things out, and moving
+stuff around quite a bit.
 
-> Note: This readme is still not nearly ready. Look at the code, or just try to
-> run it.
+I am using it as my primary vim config, but it might be too early for general
+consumption. That being said, it is already useful, and (at least in my
+experience) works better and faster then the old one.
+
+What **might** come next:
+
+* many "features" can be implemenetd with different 'backends', e.g. bufferlist
+  is currently done with `:CtrlPBuffer`, but there is also `Unite -start-insert buffer`.
+  And there is FZF which I'm yet to look into.
+  I'm currently thinking about trying those variants, to see which one I
+  prefer. And I might end up having all those variants configurable during the
+  installation (as its pretty much a matter of prefernce, and someone might
+  prefer the old way)
+
+* I'm not completely happy with the file structure. While its very easy to add
+  and change stuff, its a bit too 'messy', with too many directory levels etc.
+  I might play with layout to make it more 'flat'.
+
+* Also thinking about using single file with "magic" comments to separate into
+  various destinations instead of having a directory with many files.
+
+  e.g. instead of having `files/vimrc.bindings`, `files/vimrc.before`,
+  `files/vimrc.after` for some plugin, there would be just `files` **file**
+  with comments separating into various destinations. This is pretty much
+  speculation at this point. Ideas area welcome ;)
+
+* more language specific configurations. I haven't yet transfered all my
+  language configs from v1, as I want to only add stuff I'm using **right
+  now**.
 
 ## Major changes
 
@@ -94,11 +121,11 @@ directory. And example one can be seen [here](dist/README.md)
       * ~/.gvimrc.before
   * << here all plugins are actually loaded >>
   * after/plugin/after.vim
+    * vimrc.bindings
+      * ~/.vimrc.bindings
+      * gvimrc.bindings
+        * ~/.gvimrc.bindings
     * vimrc.after
-      * vimrc.bindings
-        * ~/.vimrc.bindings
-        * gvimrc.bindings
-          * ~/.gvimrc.bindings
       * ~/.vimrc.after
       * gvimrc.after
         * ~/.gvimrc.after
@@ -118,17 +145,25 @@ care of the standard ones, if you need a new one, you might need to clean it up
 your self. place it in `000=-....` plugin directory to make sure it is called
 before any other plugin tries to add content to it.
 
+If a plugin has a `prompt.sh` file in the directory, its loading will be
+conditioned on evaling this script.
+
+If the script "fails" (i.e. non-zero exit code), then the plugin will not be loaded.
+
+> IMPORTANT: The prompt script is evaled in the contenxt of the generator, so it has
+> access to all the state and functions, so it can run `ask...` functions, etc.
+
+Note that prompt.sh should usually only ask simple question and return
+true/false, if you want something more complex create an `install.sh` instead.
+
 If a plugin has an `install.sh` file in the directory, it will be sourced.
 
-If a plugin has a `prompt` dile in the directory, its loading will be
-conditioned upon asking the user. The format os the `prompt` files is simple.
-Its 3 lines. 1st line is the name of the variable that will hold the answer. It
-must be globablly unique. The 2nd line is the promt, thay is displayed to the
-user. And the 3rd line is the default answer. If its absent, 'y' is presumed.
+so the logic flow is as follows:
 
-Note that the `prompt` file only assumes a simple yes/now question. If you want
-something more comples create an `install.sh` files and look into
-`vendor/ask.sh` for examples of how to ask other kind of questions.
+- check for prompt.sh and exit if it returns false
+- copy files from `files` directory
+- load all plugins in the `plugins` directory
+- run `install.sh` if exists
 
 TBD.
 

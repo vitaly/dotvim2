@@ -82,19 +82,8 @@ function load()
 {
   v yellow "$1"
 
-  if [ -f "$1/prompt" ]; then
-    if [ -f "$1/desc" ]; then
-      desc "$(cat "$1/desc")"
-    fi
-
-    exec 5< "$1/prompt"
-    read name <&5
-    read prompt <&5
-    if ! read default <&5; then
-        default=
-    fi
-
-    if ! ask_bool $name "$prompt" "$default"; then
+  if [ -f "$1/prompt.sh" ]; then
+    if ! eval "$(cat "$1/prompt.sh")"; then
       return
     fi
   fi

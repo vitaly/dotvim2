@@ -173,7 +173,6 @@ function ask()
 
     if _validate "$kind" "$a"; then
       local canonic="$(_canonic "$kind" "$a")"
-      echo -n "> "
       _save "$name" "$canonic" "$DESC" "$prompt"
       break
     else
