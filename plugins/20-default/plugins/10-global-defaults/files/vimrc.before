@@ -84,9 +84,13 @@ set undodir=~/.backup/undo/,~/tmp,.
 
 " folding
 set foldcolumn=0        " columns for folding
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=9
-set nofoldenable        "dont fold by default "
+set nofoldenable        " dont fold by default "
+
+" concealing
+set concealcursor=n
+set conceallevel=2
 
 " extended '%' mapping for if/then/else/end etc
 runtime macros/matchit.vim

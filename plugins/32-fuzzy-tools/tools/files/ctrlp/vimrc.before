@@ -1,0 +1,2 @@
+let g:ctrlp_map = '<leader>,'
+let g:ctrlp_cmd = 'CtrlP'

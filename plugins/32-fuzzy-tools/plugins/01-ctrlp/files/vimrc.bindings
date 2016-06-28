@@ -1,6 +1,4 @@
-nmap <leader>. :CtrlPClearCache<cr>:CtrlPMixed<cr>
 nmap <leader>l :CtrlPLine<cr>
-nmap <leader>b :CtrlPBuff<cr>
 nmap <leader>m :CtrlPBufTag<cr>
 nmap <leader>M :CtrlPBufTagAll<cr>
 nmap <leader>q :CtrlPQuickfix<cr>

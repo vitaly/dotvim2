@@ -1,6 +1,3 @@
-let g:ctrlp_map = '<leader>,'
-let g:ctrlp_cmd = 'CtrlP'
-
 let g:ctrlp_clear_cache_on_exit = 1
 
 let g:ctrlp_max_height = 20

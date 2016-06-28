@@ -1,0 +1,3 @@
+" prevent indent-lines from messing with concealing settings set globally
+let g:indentLine_concealcursor = &concealcursor
+let g:indentLine_conceallevel = &conceallevel

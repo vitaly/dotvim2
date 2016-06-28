@@ -1,0 +1,1 @@
+nmap <leader>. :CtrlPClearCache<cr>:CtrlP<cr>

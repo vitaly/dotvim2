@@ -1,0 +1,1 @@
+nmap <leader>b :Unite -start-insert -no-split -buffer-name=buffer buffer<cr>
