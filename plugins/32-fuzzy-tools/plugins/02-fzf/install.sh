@@ -18,14 +18,14 @@ if [ -d ~/.fzf ]; then
   FZF_DIR=~/.fzf
 elif [ -d /usr/local/opt/fzf/ ]; then
   FZF_DIR=/usr/local/opt/fzf/
+else
+  die "can not find FZF directory"
 fi
 
-if [ -d "$FZF_DIR" ]; then
-  echo "set rtp+=$FZF_DIR" | append_to_file "vimrc.before" "$(this_file)"
-fi
+echo "set rtp+=$FZF_DIR" | append_to_file "vimrc.before" "$(this_file)"
 
 if [ -z "$FZF_DEFAULT_COMMAND" -a -n "`which ag`" ]; then
-  red
+  yellow
   cat <<END
 
 ***********************************************************************

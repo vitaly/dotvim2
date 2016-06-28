@@ -6,7 +6,7 @@ is_true ctrl_p    && enum ctrlp "- use ':CtrlPQuickfix'"
 
 if multi_enum; then
 
-  if unite_vim; then
+  if is_true unite_vim; then
     desc_add "Note: 'osyo-manga/unite-quickfix' plugin will be installed if you choose 'unite' option."
   fi
 

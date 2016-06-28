@@ -91,6 +91,16 @@ function _prompt()
   local kind="$1"
   local prompt="$2"
   local default="$3"
+
+  if [ -n "$DESC" ]; then
+    bold
+    blue
+    echo -e "\n$DESC"
+    enum_desc_values
+    echo
+    nc
+  fi
+
   green -n "$prompt ($kind)"
   [ -n "$default" ] && cyan -n " [$default]"
   green -n ": "
@@ -177,20 +187,13 @@ function ask()
   [ -n "$1" ] || raise $usage
   local prompt="$1"; shift
 
-
-  echo
-
-  if [ -n "$DESC" ]; then
-    bold
-    blue
-    echo -e "$DESC"
-    enum_desc_values
-    echo
-    nc
-  fi
-
   local default="$1"
   local current=$(value "$name")
+
+  local silent=
+  if [ -z "$ASK_FORCE" -a -z "$ASK_VERBOSE" ]; then
+    silent=1
+  fi
 
   local a
   while true; do
@@ -206,9 +209,11 @@ function ask()
     yellow
 
     if [ -z "$ASK_FORCE" -a -n "$current" ]; then
-      _prompt "$kind" "$prompt" "$current"
       a="$current"; unset current
-      echo "$a"
+      if [ -z "$silent" ]; then
+        _prompt "$kind" "$prompt" "$a"
+        echo "$a"
+      fi
 
     else
       if [ -n "$current" ]; then
