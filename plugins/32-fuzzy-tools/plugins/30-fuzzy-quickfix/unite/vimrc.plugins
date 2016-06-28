@@ -1,0 +1,1 @@
+call dein#add('osyo-manga/unite-quickfix')

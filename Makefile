@@ -12,9 +12,9 @@ reconfigure: ${VIM_DIR}/.config
 edit: ${VIM_DIR}/.config
 	@vim ${VIM_DIR}/.config
 
-${VIM_DIR}/.config: .config
+${VIM_DIR}/.config:
 	@mkdir -pv ${VIM_DIR}
-	@cp -v $< $@
+	@bin/generate.sh
 
 install: configure
 	vim +'call dein#install()'

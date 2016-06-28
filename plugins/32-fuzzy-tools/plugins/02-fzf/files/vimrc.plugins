@@ -1,0 +1,2 @@
+call dein#add('junegunn/fzf.vim')
+

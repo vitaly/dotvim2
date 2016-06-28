@@ -1,0 +1,3 @@
+if executable("ag") && ('' == $FZF_DEFAULT_COMMAND)
+  let $FZF_DEFAULT_COMMAND = "ag --follow --nocolor --nogroup -g ''"
+endif

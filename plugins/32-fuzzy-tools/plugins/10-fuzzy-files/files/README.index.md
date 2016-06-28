@@ -1,0 +1,1 @@
+  * [File search](#fuzzy-files)

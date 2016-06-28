@@ -27,7 +27,6 @@ function this_dir()
 # banner FILE LABEL
 # 'FILE' is used to determin type of banner
 function banner()
-
 {
   local file="$1"
   local label="$2"
@@ -66,13 +65,28 @@ function append_to_file()
   ) >> "$destination"
 }
 
-# check if directory has known files and append their content to the target
+# copy files from directory into target
+# will fail if directory doesn't exist
 function copy_files()
 {
   local base="$1"
+  [ -d "$base" ] || die "directory $base not found"
+
+  _copy_files "$@"
+}
+
+# copy files from directory into target
+# will ignore if directory doesn't exist
+function _copy_files()
+{
+  local base="$1"
+
+  if [ ! -d "$base" ]; then
+    return
+  fi
+
   v blue $base
 
-  [ -d "$base" ] || die "directory $base not found"
   for f in $(cd "$base" && find . -type f); do
     cat "$base/$f" | append_to_file "$f" "$base"
   done

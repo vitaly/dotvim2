@@ -1,5 +1,4 @@
 nmap <leader>l :CtrlPLine<cr>
 nmap <leader>m :CtrlPBufTag<cr>
 nmap <leader>M :CtrlPBufTagAll<cr>
-nmap <leader>q :CtrlPQuickfix<cr>
 nmap <leader>D :CtrlPDir <space>

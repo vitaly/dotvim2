@@ -5,5 +5,5 @@
 
     See [documentation](http://valloric.github.io/YouCompleteMe).
 
-    > Note: to get rid of the "missing .tern-project file" warning, createa a
+    > Note: to get rid of the "missing .tern-project file" warning, create a
     > global `~/.tern-project` file. see `:h .tern-sub-project`.

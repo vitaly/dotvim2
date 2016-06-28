@@ -1,16 +1,9 @@
-enum 'guides|lines|-'
-desc <<END
-What plugin to use to visualize indentation level:
+desc "What plugin to use to visualize indentation level:"
 
-guides : Indent-Guides
-lines  : Yggdroot/indentLine
--      : none
-END
-ask enum visual_indent "Your choice?" lines
+enum guides "- Indent-Guides"
+enum lines " - Yggdroot/indentLine"
+enum - "     - none"
 
-case $visual_indent in
-  guides|lines)
-    copy_files "$(this_dir)/$visual_indent"
-    ;;
-  *) die "unknown indent option $visual_indent";;
-esac
+ask enum visual_indent "indentation plugin?" 2
+
+_copy_files "$(this_dir)/$visual_indent"

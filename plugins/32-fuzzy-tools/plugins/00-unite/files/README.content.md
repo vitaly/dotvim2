@@ -10,3 +10,9 @@
     Unite to choose a colorscheme.
 
 [unite]: https://github.com/Shougo/unite.vim
+
+*   <a name=unite-outline>[unite outline](https://github.com/Shougo/unite-outline) ([top](#top))
+
+    Unite source to display outline of the current file.
+
+    * `,O` - `:Unite outline` - show file outline
