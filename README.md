@@ -219,9 +219,6 @@ The plugins are loaded according to their sort order.
     Use the repeat command "." with supported plugins
 
   * [vim-session](#vim-session) Extended session management for Vim (:mksession on steroids)
-  * [vim-ag](#vim-ag)
-
-    `ag` searching integration
   * [YankRing.vim](#YankRing.vim)
 * [Completion](#completion)
 * [fuzzy search tools](#fuzzy-search)
@@ -229,12 +226,18 @@ The plugins are loaded according to their sort order.
     * [unite outline](#unite-outline)
     * TBD: Unite plugins
     * [unite-colorscheme](#unite-colorscheme)
-  * [CtrlP](#CtrlP)
+  * [CtrlP](#ctrlp)
   * [FZF](#fzf)
 
   * [File search](#fuzzy-files)
   * [Buffer search](#fuzzy-buffers)
   * [Quickfix search](#fuzzy-quickfix)
+  * [The Silver Search](#vim-ag)
+
+    `ag` searching integration
+  * [Line search](#fuzzy-lines)
+
+  * [Tags search](#fuzzy-tags)
 
 * [Utility Plugins](#utility)
   * [Utl.vim](#utl.vim) url based hyperlinks for text files
@@ -372,12 +375,6 @@ TBD
 
     * `:RestartVim<CR>` - This command saves your current editing session, restarts Vim and restores your editing session.
 
-*   <a name=vim-ag>[vim-ag](https://github.com/rking/ag.vim) ([top](#top))
-
-    Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
-
-    * `,k` - `:Ag ` - open prompt for entering search term
-
 *   <a name=YankRing.vim>[YankRing.vim](http://github.com/vim-scripts/YankRing.vim) ([top](#top))
 
     Maintains a history of previous yanks, changes and deletes
@@ -431,13 +428,9 @@ TBD
 
     > Note: actually this command aliased as `:THEME`
 
-*   <a name=CtrlP>[CtrlP](https://github.com/ctrlpvim/ctrlp.vim) ([top](#top))
+*   <a name=ctrlp>[CtrlP](https://github.com/ctrlpvim/ctrlp.vim) ([top](#top))
 
     Fuzzy file, buffer, mru, tag, etc finder.
-
-    * `,m` - `CtrlPBufTag` - search tags in the current buffer
-    * `,M` - `CtrlPBufTagAll` - search tags in all buffers
-    * `,l` - `CtrlPLine` - fuzzy search lines in all opened buffers
 
    This plugin has lots of options, see `:h ctrlp` for more.
 
@@ -455,6 +448,25 @@ TBD
 #### Quickfix search
 
     * `,q` - `:CtrlPQuickfix` - fuzzy find within quickfix buffer
+
+*   <a name=vim-ag>[The Silver Searcher](https://github.com/ggreer/the_silver_searcher) ([top](#top))
+
+    The Silver Searcher (ag) is a code-searching tool similar to ack, but faster..
+
+    The actual vim integration is provided by [FZF](#fzf)
+
+    * `,k` - `:Ag ` - open prompt for entering search term
+
+<a name=fuzzy-lines>
+#### Line search
+
+    * `,l` - `:Lines` - fuzzy search lines in all opened buffers using FZF
+
+
+<a name=fuzzy-tags>
+#### Tags search
+
+    * `,,` - `:Tags` - fuzzy find tag with FZF
 
 <a name=utility>
 ## "Utility" Plugins:

@@ -2,6 +2,7 @@ desc "What plugin to use for fuzzy buffer switching?:"
 
 is_true unite_vim && enum unite '- use ":Unite buffer"'|| true
 is_true ctrl_p    && enum ctrlp '- use ":CtrlPBuff"' || true
+is_true use_fzf   && enum fzf '  - use FZF ":Buffers"' || true
 
 if multi_enum; then
   desc_add "\nNote: this only affcts which of the options will be bound to '<leader>b'"

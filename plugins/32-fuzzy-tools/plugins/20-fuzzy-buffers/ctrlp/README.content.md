@@ -1,1 +1,1 @@
-    * `,b` - `:CtrlPBuff` - fuzzy search open buffers
+    * `,b` - `:CtrlPBuff` - fuzzy search open buffers with [CtrlP](#ctrlp)

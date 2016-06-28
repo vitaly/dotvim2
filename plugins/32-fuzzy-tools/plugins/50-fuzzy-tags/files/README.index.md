@@ -1,0 +1,1 @@
+  * [Tags search](#fuzzy-tags)
