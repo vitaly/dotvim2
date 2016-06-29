@@ -46,23 +46,20 @@ experience) works better and faster then the old one.
 
 What **might** come next:
 
-* many "features" can be implemenetd with different 'backends', e.g. bufferlist
-  is currently done with `:CtrlPBuffer`, but there is also `Unite -start-insert buffer`.
-  And there is FZF which I'm yet to look into.
-  I'm currently thinking about trying those variants, to see which one I
-  prefer. And I might end up having all those variants configurable during the
-  installation (as its pretty much a matter of prefernce, and someone might
-  prefer the old way)
-
 * I'm not completely happy with the file structure. While its very easy to add
-  and change stuff, its a bit too 'messy', with too many directory levels etc.
+  and change stuff, its a bit too 'messy', with too many directory levels, files, etc.
   I might play with layout to make it more 'flat'.
+
+* **ATTN:** will probably make the whole 'architecture' a lot simpler. The current setup
+  with plugins,before,bindings,after is way to complex, and not at all sure it
+  provides any real benefit. so plugins is 'probably' going to merge with
+  'before', and 'bindings' with 'after'.
 
 * Also thinking about using single file with "magic" comments to separate into
   various destinations instead of having a directory with many files.
 
-  e.g. instead of having `files/vimrc.bindings`, `files/vimrc.before`,
-  `files/vimrc.after` for some plugin, there would be just `files` **file**
+  e.g. instead of having `files/vimrc.plugins`, `files/vimrc.before`,
+  `files/vimrc.after` for the some plugin there would be just `files` **file**
   with comments separating into various destinations. This is pretty much
   speculation at this point. Ideas area welcome ;)
 

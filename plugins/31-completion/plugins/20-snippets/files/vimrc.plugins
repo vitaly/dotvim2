@@ -1,0 +1,3 @@
+call dein#add('ervandew/supertab')
+call dein#add('SirVer/ultisnips')
+call dein#add('honza/vim-snippets')
