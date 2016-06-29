@@ -76,9 +76,18 @@ your directory of choice. You can (and its recommended to) keep this generated
 directory content in git as well, so that after every upgrade or configuration
 change you can see the exact difference.
 
+### dein
+
+NeoBundle was replaced with dein. This time around it seems that this time
+around vim plugin managers are ten a penny.
+So I just went with [dein](https://github.com/Shougo/dein.vim), which is the
+replacement from the author of NeoBundle. NeoBundle was fast, Dein supposed to
+be faster still.
+
 ###  YouCompleteMe
 
-V1 used AutoComplPop for completion. V2 uses YouCompleteMe.
+Another space that changed considerably is autocompletion. V1 used AutoComplPop
+for completion. V2 uses YouCompleteMe.
 
 It is a quite a bit more complex and not without its problems, but it seems to
 be **the** completion plugin to use at this time.
