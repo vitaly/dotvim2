@@ -1,0 +1,41 @@
+" awesome stuff from vimbits.com
+
+" keep selection after in/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" better navigation of wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+" easier increment/decrement
+nnoremap + <C-a>
+nnoremap - <C-x>
+
+" center display after searching
+nnoremap n   nzz
+nnoremap N   Nzz
+nnoremap *   *zz
+nnoremap #   #zz
+nnoremap g*  g*zz
+nnoremap g#  g#z
+
+" disable paste mode when leaving Insert Mode
+au InsertLeave * set nopaste
+
+" fast expand current file's directory in command mode
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+cnoremap %^ <C-R>=expand('%:p:h').'/'<cr>
+
+" remove trailing spaces
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
+
+" Copy current buffer path relative to root of VIM session to system clipboard
+nnoremap <Leader>Yp :let @*=expand("%")<cr>:echo "Copied file path to clipboard"<cr>
+" Copy current filename to system clipboard
+nnoremap <Leader>Yf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
+" Copy current buffer path without filename to system clipboard
+nnoremap <Leader>Yd :let @*=expand("%:h")<cr>:echo "Copied file directory to clipboard"<cr>
+
+" keep at least  5 lines above/below cursor (when scrolling)
+set scrolloff=5

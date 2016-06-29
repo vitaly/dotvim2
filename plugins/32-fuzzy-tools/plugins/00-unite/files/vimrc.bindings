@@ -1,1 +1,0 @@
-nmap <leader>O :Unite -start-insert -no-split -buffer-name=Outline outline<cr>

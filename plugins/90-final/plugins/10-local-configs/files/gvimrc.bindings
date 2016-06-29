@@ -1,3 +1,0 @@
-if filereadable(expand("~/.gvimrc.bindings"))
-    source ~/.gvimrc.bindings
-endif

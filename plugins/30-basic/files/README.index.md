@@ -1,1 +1,0 @@
-* [Basic Plugins](#basic)

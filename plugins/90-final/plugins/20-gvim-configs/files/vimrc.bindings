@@ -1,3 +1,0 @@
-if has('gui_running')
-  source ~/.vim/gvimrc.bindings
-end

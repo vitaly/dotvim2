@@ -1,2 +1,0 @@
-" ,y to show the yankring
-nmap <leader>y :YRShow<cr>

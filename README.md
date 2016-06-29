@@ -50,11 +50,6 @@ What **might** come next:
   and change stuff, its a bit too 'messy', with too many directory levels, files, etc.
   I might play with layout to make it more 'flat'.
 
-* **ATTN:** will probably make the whole 'architecture' a lot simpler. The current setup
-  with plugins,before,bindings,after is way to complex, and not at all sure it
-  provides any real benefit. so plugins is 'probably' going to merge with
-  'before', and 'bindings' with 'after'.
-
 * Also thinking about using single file with "magic" comments to separate into
   various destinations instead of having a directory with many files.
 
@@ -121,16 +116,8 @@ directory. This README file was generated.
     * ~/.vimrc.plugins
     * gvimrc.plugins
       * ~/.gvimrc.plugins
-  * vimrc.before
-    * ~/.vimrc.before
-    * gvimrc.before
-      * ~/.gvimrc.before
   * << here all plugins are actually loaded >>
   * after/plugin/after.vim
-    * vimrc.bindings
-      * ~/.vimrc.bindings
-      * gvimrc.bindings
-        * ~/.gvimrc.bindings
     * vimrc.after
       * ~/.vimrc.after
       * gvimrc.after
@@ -204,7 +191,12 @@ The plugins are loaded according to their sort order.
 * [Core Plugins](#core)
   * [vimproc](#vimproc)
 * [Global settings](#globals)
-* [Basic Plugins](#basic)
+TBD: vimbits
+* [General Plugins](#general)
+  * [vim-airline](#airline)
+
+    better looking statusline
+
   * [greplace.vim](#greplace.vim)
   * [Gundo](#gundo)
   * [nerdtree](#nerdtree)
@@ -216,6 +208,8 @@ The plugins are loaded according to their sort order.
     Use the repeat command "." with supported plugins
 
   * [vim-session](#vim-session) Extended session management for Vim (:mksession on steroids)
+  * [Utl.vim](#utl.vim) url based hyperlinks for text files
+  * [xterm-color-table](#xterm-color-table)
   * [YankRing.vim](#YankRing.vim)
 * [Completion](#completion)
 * [fuzzy search tools](#fuzzy-search)
@@ -235,9 +229,6 @@ The plugins are loaded according to their sort order.
   * [Line search](#fuzzy-lines)
 
   * [Tags search](#fuzzy-tags)
-
-* [Utility Plugins](#utility)
-  * [Utl.vim](#utl.vim) url based hyperlinks for text files
 
 * [Plugins for Developers](#devplugins)
   * [delimitMate](#delimitMate)
@@ -269,12 +260,6 @@ The plugins are loaded according to their sort order.
       * [apidock.vim](#apidock.vim) apidock.com docs integration
       * [vim-i18n](#i18n) Rails i18n extraction plugin
   * [Vimscript](#vimscript)
-* [Extras](#extras)
-  * [xterm-color-table](#xterm-color-table)
-  * [vim-airline](#airline)
-
-    better looking statusline
-
   * [Themes](#themes)
 
 <a name=installation>
@@ -294,8 +279,18 @@ TBD
 
 TBD
 
-<a name=basic>
-## "Basic" Plugins:
+<a name=general>
+## "General" Plugins:
+
+*   <a name=airline>[vim-airline](https://github.com/bling/vim-airline) ([top](#top))
+
+    Lean & mean status/tabline for vim that's light as air.
+
+    A better replacement for vim-powerline. Optimized for speed; it loads in
+    under a millisecond.
+
+    [Install fonts](https://github.com/bling/vim-airline#integrating-with-powerline-fonts)
+    for best results.
 
 *   <a name=greplace.vim>[greplace.vim](http://github.com/vim-scripts/greplace.vim) ([top](#top))
 
@@ -371,6 +366,29 @@ TBD
     When runnin in a graphical vim:
 
     * `:RestartVim<CR>` - This command saves your current editing session, restarts Vim and restores your editing session.
+
+*   <a name=utl.vim>[utl.vim](https://github.com/vim-scripts/utl.vim) ([top](#top))
+
+    Utl.vim brings the benefits of URL-based hyperlinking to plain text,
+
+    `:h utl` for help.
+
+    Bindings:
+
+    * `,o` - types `:Utl `. you still need to press enter to `o`pen url. This way
+      it allows to type other commands if needed.
+
+*   <a name=xterm-color-table>[xterm-color-table](https://github.com/guns/xterm-color-table.vim) ([top](#top))
+
+`:XtermColorTable` to create a new buffer with xterm colors
+
+While in the xterm colors buffer:
+
+* `t` - toggle text visibility
+* `f` - set text color to the current color
+* `#` - yank current color
+
+`:h xterm-color-table.txt` for more help.
 
 *   <a name=YankRing.vim>[YankRing.vim](http://github.com/vim-scripts/YankRing.vim) ([top](#top))
 
@@ -464,20 +482,6 @@ TBD
 #### Tags search
 
     * `,,` - `:Tags` - fuzzy find tag with FZF
-
-<a name=utility>
-## "Utility" Plugins:
-
-*   <a name=utl.vim>[utl.vim](https://github.com/vim-scripts/utl.vim) ([top](#top))
-
-    Utl.vim brings the benefits of URL-based hyperlinking to plain text,
-
-    `:h utl` for help.
-
-    Bindings:
-
-    * `,o` - types `:Utl `. you still need to press enter to `o`pen url. This way
-      it allows to type other commands if needed.
 
 <a name=devplugins>
 ## Plugins for Developers:
@@ -723,31 +727,6 @@ TBD
 *   <a name=vimscript>[vimscript] ([top](#top))
 
 * `,x` - to execute the current line of vimscript
-
-<a name=extras>
-## Extras
-
-*   <a name=xterm-color-table>[xterm-color-table](https://github.com/guns/xterm-color-table.vim) ([top](#top))
-
-`:XtermColorTable` to create a new buffer with xterm colors
-
-While in the xterm colors buffer:
-
-* `t` - toggle text visibility
-* `f` - set text color to the current color
-* `#` - yank current color
-
-`:h xterm-color-table.txt` for more help.
-
-*   <a name=airline>[vim-airline](https://github.com/bling/vim-airline) ([top](#top))
-
-    Lean & mean status/tabline for vim that's light as air.
-
-    A better replacement for vim-powerline. Optimized for speed; it loads in
-    under a millisecond.
-
-    [Install fonts](https://github.com/bling/vim-airline#integrating-with-powerline-fonts)
-    for best results.
 
 *   <a name=themes>Themes ([top](#top))
 

@@ -1,8 +1,0 @@
-call dein#end()
-
-filetype plugin indent on
-
-if dein#check_install()
-  echo "installing plugins"
-  call dein#install()
-endif

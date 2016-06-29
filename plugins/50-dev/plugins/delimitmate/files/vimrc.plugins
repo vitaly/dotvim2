@@ -1,1 +1,0 @@
-call dein#add('Raimondi/delimitMate')

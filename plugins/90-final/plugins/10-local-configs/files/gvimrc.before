@@ -1,3 +1,0 @@
-if filereadable(expand("~/.gvimrc.before"))
-    source ~/.gvimrc.before
-endif

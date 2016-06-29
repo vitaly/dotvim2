@@ -1,1 +1,0 @@
-nmap <leader>q :Unite -start-insert -no-split -buffer-name=QuickFix quickfix<cr>

@@ -1,2 +1,0 @@
-
-* [Utility Plugins](#utility)

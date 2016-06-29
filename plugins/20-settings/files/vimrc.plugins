@@ -1,0 +1,2 @@
+let mapleader = ","
+let maplocalleader = "\\"

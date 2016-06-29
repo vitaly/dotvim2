@@ -1,2 +1,0 @@
-call dein#add('xolox/vim-misc')
-call dein#add('xolox/vim-session')

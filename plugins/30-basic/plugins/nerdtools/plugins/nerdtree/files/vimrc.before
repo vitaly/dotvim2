@@ -1,2 +1,0 @@
-" Tells the NERD tree to respect 'wildignore'.
-let NERDTreeRespectWildIgnore=1

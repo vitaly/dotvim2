@@ -1,0 +1,14 @@
+" Rails support
+call dein#add('tpope/vim-rails')
+
+" apidock.com docs integration
+call dein#add('apidock.vim')
+
+" lightweight Rspec runner for Vim
+call dein#add('thoughtbot/vim-rspec')
+
+" Rails i18n extraction plugin
+call dein#add('stefanoverna/vim-i18n')
+
+" vim-rspec
+map <Leader>r :call RunNearestSpec()<CR>

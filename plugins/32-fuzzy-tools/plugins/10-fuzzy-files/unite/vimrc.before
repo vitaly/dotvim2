@@ -1,2 +1,0 @@
-" prevent CtrlP from adding the default map
-let g:ctrlp_map = ''
