@@ -38,20 +38,85 @@ function finish()
 DESC=
 function desc()
 {
-  if [ -n "$1" ]; then
+  if [ -n "$*" ]; then
     DESC="$*"
   else
     DESC="`cat`"
   fi
 }
 
+function desc_add()
+{
+  if [ -n "$*" ]; then
+    DESC+="\n$*"
+  else
+    DESC+="\n`cat`"
+  fi
+}
+
+ENUM_VALUES=()
+ENUM_DESCRIPTIONS=()
+# enum VALUE DESCRIPTION
+function enum()
+{
+  ENUM_VALUES+=("$1")
+  ENUM_DESCRIPTIONS+=("$2")
+}
+
+function enum_size()
+{
+  echo ${#ENUM_VALUES[@]}
+}
+
+function multi_enum()
+{
+  [ "$(enum_size)" -gt 1 ]
+}
+
+function dump_enum_values()
+{
+  for i in "${ENUM_VALUES[@]}"; do
+    echo "'$i'"
+  done
+}
+
+function enum_value
+{
+  echo "${ENUM_VALUES[$(($1 - 1))]}"
+}
+
+# _prompt KIND PROMPT DEFAULT
 function _prompt()
 {
-  green -n "${1}"
-  [ -n "$2" ] && cyan -n " [$2]"
+  local kind="$1"
+  local prompt="$2"
+  local default="$3"
+
+  if [ -n "$DESC" ]; then
+    bold
+    blue
+    echo -e "\n$DESC"
+    enum_desc_values
+    echo
+    nc
+  fi
+
+  green -n "$prompt ($kind)"
+  [ -n "$default" ] && cyan -n " [$default]"
   green -n ": "
 }
 
+function _validate_enum()
+{
+  for i in "${ENUM_VALUES[@]}"; do
+    if [ "$i" == "$1" ]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
+# _validate KIND VALUE
 function _validate()
 {
   case "$1" in
@@ -60,6 +125,7 @@ function _validate()
     word)  echo "$2" | grep -qiE '^[a-z]+$' ;;
     sym*)   echo "$2" | grep -qiE '^[a-z0-9_]+$' ;;
     simple) echo "$2" | grep -qiE '^[a-z0-9_ ]+$' ;;
+    enum) _validate_enum "$2";;
     str*)  [ -n "$2" ] ;;
     any*)  true ;;
 
@@ -85,15 +151,26 @@ function _save()
 {
   local name="$1"
   local escaped_value=$(printf %q "$2")
-  local comment="$( echo "$3"; echo ": $4" )"
+  local comment="$( echo -e "$3"; echo ": $4" )"
 
   if [ -n "$comment" ]; then
-    echo "$comment" | sed -e 's/^/# /' >> "$TMPOUT"
+    echo -e "$comment" | sed -e 's/^/# /' >> "$TMPOUT"
   fi
   echo $name=$escaped_value >> "$TMPOUT"
   echo >> "$TMPOUT"
 
   eval $name=$escaped_value
+}
+
+function enum_desc_values()
+{
+  if [ "enum" != "$kind" ]; then
+    return
+  fi
+  echo -e "\nValid options:"
+  for (( i=0 ; i < $(enum_size); i++ )); do
+    echo -e "$((i + 1)): ${ENUM_VALUES[$i]} ${ENUM_DESCRIPTIONS[$i]}"
+  done
 }
 
 function ask()
@@ -110,48 +187,66 @@ function ask()
   [ -n "$1" ] || raise $usage
   local prompt="$1"; shift
 
-
-  echo
-
-  if [ -n "$DESC" ]; then
-    bold
-    blue "$DESC"
-  fi
-
   local default="$1"
   local current=$(value "$name")
+
+  local silent=
+  if [ -z "$ASK_FORCE" -a -z "$ASK_VERBOSE" ]; then
+    silent=1
+  fi
 
   local a
   while true; do
 
-    # use the previously selected value as the default when re-configuring
-    if [ -n "$current" ]; then
-      local v="$current"
-      unset current
-    else
-      local v="$default"
-      unset default
-    fi
-
-    _prompt "$prompt" "$v"
+    # in case of non-forced config, we can re-use the current value 'ONCE!' if
+    # it fails (e.g. invalid) we should ignore it on the next iteration
+    #
+    # in case of forced config, we should use the currently set value as a
+    # default, i.e. the value that will be used for simple 'ENTER' but we also
+    # want to choose it only once, and if its invalid, on the next run we want
+    # to preset the global default instead (but also only once
 
     yellow
-    if [ -z "$ASK_FORCE" -a -n "$v" ]; then
-      # try to use currently active default
-      a="$v"
-      echo "$a"
+
+    if [ -z "$ASK_FORCE" -a -n "$current" ]; then
+      a="$current"; unset current
+      if [ -z "$silent" ]; then
+        _prompt "$kind" "$prompt" "$a"
+        echo "$a"
+      fi
 
     else
+      if [ -n "$current" ]; then
+        v="$current"
+      else
+        if [ -n "$default" ]; then
+          v="$default"
+        else
+          v=
+        fi
+      fi
+
+      _prompt "$kind" "$prompt" "$v"
       read a
-      [ -z "$a" ] && a="$v"
+
+      if [ -z "$a" ]; then
+        a="$v"
+        if [ -n "$current" ]; then
+          unset current
+        else
+          unset default
+        fi
+      fi
     fi
     nc
 
+    if [ "enum" == "$kind" ] && _validate number "$a" && [ "$a" -ge 1 -a "$a" -le "$(enum_size)" ]; then
+      a="$(enum_value $a)"
+    fi
+
     if _validate "$kind" "$a"; then
       local canonic="$(_canonic "$kind" "$a")"
-      echo -n "> "
-      red "$canonic"
-      _save "$name" "$canonic" "$DESC" "$prompt"
+      _save "$name" "$canonic" "${DESC}$(enum_desc_values)" "$prompt"
       break
     else
       yellow -e "'$a' ${READ}is not a valid '${kind}'"
@@ -159,4 +254,6 @@ function ask()
   done
 
   DESC=
+  ENUM_VALUES=()
+  ENUM_DESCRIPTIONS=()
 }

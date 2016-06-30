@@ -8,7 +8,7 @@ function raise() { yellow -n "${BASH_SOURCE[2]}:${BASH_LINENO[1]}"; red " $@"; e
 
 function value() { eval "echo \$$1"; }
 
-function is_true() { [ 'y' == $(value "$1") ]; }
+function is_true() { [ 'y' == "$(value "$1")" ]; }
 
 function ask_bool()
 {
