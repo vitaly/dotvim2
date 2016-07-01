@@ -37,7 +37,7 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jp
 set shell=/bin/bash     " use bash for shell commands
 set autowriteall        " Automatically save before commands like :next and :make
 set hidden              " enable multiple modified buffers
-set history=1000
+set history=10000
 set autoread            " automatically read file that has been changed on disk and doesn't have changes in vim
 set backspace=indent,eol,start
 set guioptions-=T       " disable toolbar"
@@ -66,6 +66,13 @@ set hlsearch            " Highlight search match
 set ignorecase          " Do case insensitive matching
 set smartcase           " do not ignore if search pattern has CAPS
 
+" Writes to the unnamed register also writes to the * and + registers. This
+" makes it easy to interact with the system clipboard
+if has ('unnamedplus')
+  set clipboard=unnamedplus
+else
+  set clipboard=unnamed
+endif
 
 " omni completion settings
 set ofu=syntaxcomplete#Complete
@@ -97,9 +104,6 @@ runtime macros/matchit.vim
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
-
-" make Y consistent with C and D
-nnoremap Y y$
 
 " toggle highlight trailing whitespace
 nmap <silent> <leader>s :set nolist!<CR>

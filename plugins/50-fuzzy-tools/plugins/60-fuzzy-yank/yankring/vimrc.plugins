@@ -6,5 +6,9 @@ let g:yankring_replace_n_nkey = '<leader>]'
 " put the yankring_history file in ~/.backup
 let g:yankring_history_dir = '~/.backup'
 
+let g:yankring_max_history = 1000
+
 " ,y to show the yankring
 nmap <leader>y :YRShow<cr>
+
+let g:yankring_window_height = 20

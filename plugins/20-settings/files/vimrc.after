@@ -1,0 +1,3 @@
+" make Y consistent with C and D
+" must be in 'after' to prevent yankring overriding it
+nnoremap Y y$

@@ -1,0 +1,1 @@
+nmap <leader>y :Unite -start-insert -no-split -buffer-name=YankHistory history/yank<cr>

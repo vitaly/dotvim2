@@ -219,7 +219,6 @@ TBD: vimbits
   * [vim-session](#vim-session) Extended session management for Vim (:mksession on steroids)
   * [Utl.vim](#utl.vim) url based hyperlinks for text files
   * [xterm-color-table](#xterm-color-table)
-  * [YankRing.vim](#YankRing.vim)
 * [Completion](#completion)
 * [fuzzy search tools](#fuzzy-search)
   * [unite.vim](#unite.vim)
@@ -238,6 +237,7 @@ TBD: vimbits
   * [Line search](#fuzzy-lines)
 
   * [Tags search](#fuzzy-tags)
+  * [Yank history search](#fuzzy-yank)
 
 * [Plugins for Developers](#devplugins)
   * [delimitMate](#delimitMate)
@@ -399,14 +399,6 @@ While in the xterm colors buffer:
 
 `:h xterm-color-table.txt` for more help.
 
-*   <a name=YankRing.vim>[YankRing.vim](http://github.com/vim-scripts/YankRing.vim) ([top](#top))
-
-    Maintains a history of previous yanks, changes and deletes
-
-    * `,y` to show the yankring
-    * `,[`/`,]` - to cycle the just-pasted text though the yankring.
-    * `:h yankring.txt` and `:h yankring-tutorial` for more
-
 <a name=completion>
 ## Completion
 
@@ -491,6 +483,19 @@ While in the xterm colors buffer:
 #### Tags search
 
     * `,,` - `:Tags` - fuzzy find tag with FZF
+    * `\t` - `:Btags` - fuzzy find bugger tag with FZF
+
+<a name=fuzzy-yank>
+#### Yank history search
+
+
+    [YankRing.vim](http://github.com/vim-scripts/YankRing.vim) ([top](#top))
+
+    Maintains a history of previous yanks, changes and deletes
+
+    * `,y` to show the yankring
+    * `,[`/`,]` - to cycle the just-pasted text though the yankring.
+    * `:h yankring.txt` and `:h yankring-tutorial` for more
 
 <a name=devplugins>
 ## Plugins for Developers:
