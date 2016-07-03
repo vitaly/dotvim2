@@ -1,2 +1,3 @@
 call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
+call dein#add('mmalecki/vim-node.js')
