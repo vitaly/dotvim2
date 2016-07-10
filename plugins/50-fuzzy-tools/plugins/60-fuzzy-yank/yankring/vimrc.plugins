@@ -4,7 +4,7 @@ let g:yankring_replace_n_pkey = '<leader>['
 let g:yankring_replace_n_nkey = '<leader>]'
 
 " put the yankring_history file in ~/.backup
-let g:yankring_history_dir = '~/.backup'
+let g:yankring_history_dir = expand('~/.backup')
 
 let g:yankring_max_history = 1000
 
