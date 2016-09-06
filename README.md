@@ -247,7 +247,7 @@ TBD: vimbits
   * [editorconfig](#editorconfig)
   * [vim-endwise](#vim-endwise)
   * [vim-fugitive](#vim-fugitive)
-    * [vim-fugitive](#vim-merginal)
+    * [vim-merginal](#vim-merginal)
   * [vim-gitgutter](#gitgutter)
 
     git diff in the gutter (sign column) and stages/reverts hunks

@@ -1,4 +1,4 @@
-is_true use_fzf   && enum fzf '  - use ":Files" from FZF' || true
+is_true use_fzf   && enum fzf "  - use ':Files' from FZF" || true
 is_true unite_vim && enum unite "- use ':Unite file_rec/async:!'" || true
 is_true ctrl_p    && enum ctrlp "- use ':CtrlP'" || true
 
