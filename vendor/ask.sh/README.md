@@ -48,4 +48,4 @@ Valid types:
 - `sym[bol]` - sequence of letters, numbers, and '\_'
 - `simple` - simple string, basicly symbols with spaces
 - `str[ing]` - any non empty string
-- `any` - anhitng
+- `any` - anything

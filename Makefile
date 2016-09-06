@@ -1,20 +1,16 @@
 export VIM_DIR ?= dist
 
-configure: ${VIM_DIR}/.config
+configure:
 	@bin/generate.sh
 
-vconfigure: ${VIM_DIR}/.config
+vconfigure:
 	@bin/generate.sh -v
 
-reconfigure: ${VIM_DIR}/.config
+reconfigure:
 	@bin/generate.sh -f
 
 edit: ${VIM_DIR}/.config
 	@vim ${VIM_DIR}/.config
-
-${VIM_DIR}/.config:
-	@mkdir -pv ${VIM_DIR}
-	@bin/generate.sh
 
 install: configure
 	vim +'call dein#install()'

@@ -17,4 +17,4 @@ decided to make this configurable, as not everyone might want to invest the time
 to rewire muscle memory ;)
 END
 
-ask bool system_clipboard '"merge" vim and system clipboards?'
+ask_bool system_clipboard '"merge" vim and system clipboards?'
