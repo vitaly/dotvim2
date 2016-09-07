@@ -1,3 +1,2 @@
-  * [The Silver Search](#vim-ag)
-
-    `ag` searching integration
+    *   [The Silver Search](#vim-ag)
+        `ag` searching integration

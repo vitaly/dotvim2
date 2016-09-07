@@ -1,4 +1,4 @@
 
-<a name=fuzzy-files>
-#### File search
+
+*   <a name=fuzzy-files>File search ([top](#top))
 

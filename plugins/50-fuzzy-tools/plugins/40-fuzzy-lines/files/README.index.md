@@ -1,2 +1,1 @@
-  * [Line search](#fuzzy-lines)
-
+    *   [Line search](#fuzzy-lines)

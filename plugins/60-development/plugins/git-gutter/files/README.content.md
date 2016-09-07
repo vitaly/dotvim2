@@ -1,5 +1,6 @@
 
 *   <a name=gitgutter>[Vim Git Gutter](https://github.com/airblade/vim-gitgutter) ([top](#top))
+
     A Vim plugin which shows a git diff in the 'gutter' (sign column).
     It shows whether each line has been added, modified, and where lines have been removed.
 

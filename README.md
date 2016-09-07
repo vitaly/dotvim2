@@ -108,7 +108,7 @@ You can configure dotvim2 in many ways, but the default installation (`make`)
 will just use the supplied default.
 
 You can re-configure it yourself by running `make reconfigure`, or editing
-`.config` files in the destination directory.
+`.config` files in the destination directory (you can run `make edit` to do that).
 
 All choices are saved for the next time, so when a new version comes out, your
 old answers will be preserved.
@@ -121,16 +121,16 @@ directory. This README file was generated.
 # load order
 
 * vimrc
-  * vimrc.plugins
-    * ~/.vimrc.plugins
-    * gvimrc.plugins
-      * ~/.gvimrc.plugins
-  * << here all plugins are actually loaded >>
-  * after/plugin/after.vim
-    * vimrc.after
-      * ~/.vimrc.after
-      * gvimrc.after
-        * ~/.gvimrc.after
+    * vimrc.plugins
+        * ~/.vimrc.plugins
+        * gvimrc.plugins
+            * ~/.gvimrc.plugins
+    * << here all plugins are actually loaded >>
+    * after/plugin/after.vim
+        * vimrc.after
+            * ~/.vimrc.after
+            * gvimrc.after
+                * ~/.gvimrc.after
 
 Each plugin can add content to files in the target vim directory by simply
 having the corresponding files present in the `plugin/files` directory
@@ -162,7 +162,7 @@ If a plugin has an `install.sh` file in the directory, it will be sourced.
 
 so the logic flow is as follows:
 
-- check for prompt.sh and exit if it returns false
+- check for `prompt.sh` and exit if it returns false
 - copy files from `files` directory
 - load all plugins in the `plugins` directory
 - run `install.sh` if exists
@@ -175,19 +175,23 @@ TBD
 
 ## example files structure
 
-    * plugins
-      * simple_directory_plugin
-        * files
-          * file_to_copy
-      * plugin_with_install_script
-        * files
-          * file_to_copy
-        * other_files
-          * other_files_to_copy
-        * install.sh
-        * plugins
-          * sub-plugin1
-            ...
+- `plugins`
+    - `simple_directory_plugin`
+        - `files`
+            - `file_to_copy`
+    - `plugin with a prompt`
+        - `files`
+            - `some file`
+        - `prompt.sh`
+    - `plugin_with_install_script`
+        - `files`
+            - `file_to_copy`
+        - `other_files`
+            - `other_files_to_copy`
+        - `install.sh`
+        - `plugins`
+            - `sub-plugin1`
+              ...
 
 ## plugin ordering
 
@@ -196,85 +200,89 @@ The plugins are loaded according to their sort order.
 <a name=top>
 ## Contents
 
-* [Installation](#installation)
-* [Core Plugins](#core)
-  * [vimproc](#vimproc)
-* [Global settings](#globals)
-TBD: vimbits
-* [General Plugins](#general)
-  * [vim-airline](#airline)
+*   [Installation](#installation)
 
-    better looking statusline
+*   [Core Plugins](#core)
+    *   [vimproc](#vimproc)
 
-  * [greplace.vim](#greplace.vim)
-  * [Gundo](#gundo)
-  * [nerdtree](#nerdtree)
-  * [nerdtree-git](#nerdtree-git)
-  * [nerdtreetabs](#nerdtreetabs)
-  * [nerdcommenter](#nerdcommenter)
-  * [vim-repeat](http://github.com/tpope/vim-repeat)
+*   [Global settings](#globals)
+    *   TBD: vimbits
 
-    Use the repeat command "." with supported plugins
+*   [General Plugins](#general)
+    *   [vim-airline](#airline)
+        better looking statusline
+    *   [greplace.vim](#greplace.vim)
+    *   [Gundo](#gundo)
+    *   [nerdtree](#nerdtree)
+    *   [nerdtree-git](#nerdtree-git)
+    *   [nerdtreetabs](#nerdtreetabs)
+    *   [nerdcommenter](#nerdcommenter)
+    *   [vim-repeat](http://github.com/tpope/vim-repeat)
+        Use the repeat command "." with supported plugins
+    *   [vim-session](#vim-session)
+        Extended session management for Vim (:mksession on steroids)
+    *   [Utl.vim](#utl.vim)
+        url based hyperlinks for text files
+    *   [xterm-color-table](#xterm-color-table)
 
-  * [vim-session](#vim-session) Extended session management for Vim (:mksession on steroids)
-  * [Utl.vim](#utl.vim) url based hyperlinks for text files
-  * [xterm-color-table](#xterm-color-table)
-* [Completion](#completion)
-* [fuzzy search tools](#fuzzy-search)
-  * [unite.vim](#unite.vim)
-    * [unite outline](#unite-outline)
-    * TBD: Unite plugins
-    * [unite-colorscheme](#unite-colorscheme)
-  * [CtrlP](#ctrlp)
-  * [FZF](#fzf)
+*   [Completion](#completion)
+    *   [YouCompleteMe](#youcompleteme)
 
-  * [File search](#fuzzy-files)
-  * [Buffer search](#fuzzy-buffers)
-  * [Quickfix search](#fuzzy-quickfix)
-  * [The Silver Search](#vim-ag)
+*   [fuzzy search tools](#fuzzy-search)
+    *   [unite.vim](#unite.vim)
+        *   TBD: other Unite plugins
+        *   [unite outline](#unite-outline)
+        *   [unite-colorscheme](#unite-colorscheme)
+    *   [CtrlP](#ctrlp)
+    *   [FZF](#fzf)
+    *   [File search](#fuzzy-files)
+    *   [Buffer search](#fuzzy-buffers)
+    *   [Quickfix search](#fuzzy-quickfix)
+    *   [The Silver Search](#vim-ag)
+        `ag` searching integration
+    *   [Line search](#fuzzy-lines)
+    *   [Tags search](#fuzzy-tags)
+    *   [Yank history search](#fuzzy-yank)
 
-    `ag` searching integration
-  * [Line search](#fuzzy-lines)
+*   [Plugins for Developers](#devplugins)
+    *   [delimitMate](#delimitMate)
+        automatic closing of quotes, parenthesis, brackets, etc.
+    *   [editorconfig](#editorconfig)
+    *   [vim-endwise](#vim-endwise)
+    *   [vim-fugitive](#vim-fugitive)
+    *   [vim-merginal](#vim-merginal)
+    *   [vim-gitgutter](#gitgutter)
+        git diff in the gutter (sign column) and stages/reverts hunks
+    *   [vim-surround](#vim-surround)
+    *   [syntastic](#syntastic) syntax checking on save
+    *   [tmux-navigator](#tmux-navigator)
 
-  * [Tags search](#fuzzy-tags)
-  * [Yank history search](#fuzzy-yank)
+*   [Development languages and syntax support](#languages)
+    *   [HTML Support](#html)
+        *   [vim-emmet](#vim-emmet) vim-emmet for highspeed HTML editing
 
-* [Plugins for Developers](#devplugins)
-  * [delimitMate](#delimitMate)
+    *   [Ruby Support](#ruby)
+        *   [vim-bundler](#vim-bundler) bundler integration
+        *   [vim-rake](#vim-rake) rake integration
+        *   [vim-textobj-rubyblock](#vim-textobj-rubyblock) A custom text object for selecting ruby blocks (ar/ir)
+        *   [vim-ruby-refactoring](#vim-ruby-refactoring)
+        *   [blockle.vim](#blockle) toggle ruby blocks style
 
-    automatic closing of quotes, parenthesis, brackets, etc.
+        *   [Ruby on Rails Support](#rails)
+            *   [vim-rails](#vim-rails)
+            *   [vim-rspec](#vim-rspec) lightweight Rspec runner for Vim
+            *   [apidock.vim](#apidock.vim) apidock.com docs integration
+            *   [vim-i18n](#i18n) Rails i18n extraction plugin
 
-  * [editorconfig](#editorconfig)
-  * [vim-endwise](#vim-endwise)
-  * [vim-fugitive](#vim-fugitive)
-    * [vim-merginal](#vim-merginal)
-  * [vim-gitgutter](#gitgutter)
+    *   [Vimscript](#vimscript)
+    *   [Themes](#themes)
 
-    git diff in the gutter (sign column) and stages/reverts hunks
-
-  * [vim-surround](#vim-surround)
-  * [syntastic](#syntastic) syntax checking on save
-  * [tmux-navigator](#tmux-navigator)
-
-* [Development languages and syntax support](#languages)
-  * [Ruby Support](#ruby)
-    * [vim-bundler](#vim-bundler) bundler integration
-    * [vim-rake](#vim-rake) rake integration
-    * [vim-textobj-rubyblock](#vim-textobj-rubyblock) A custom text object for selecting ruby blocks (ar/ir)
-    * [vim-ruby-refactoring](#vim-ruby-refactoring)
-    * [blockle.vim](#blockle) toggle ruby blocks style
-    * [Ruby on Rails Support](#rails)
-      * [vim-rails](#vim-rails)
-      * [vim-rspec](#vim-rspec) lightweight Rspec runner for Vim
-      * [apidock.vim](#apidock.vim) apidock.com docs integration
-      * [vim-i18n](#i18n) Rails i18n extraction plugin
-  * [Vimscript](#vimscript)
-  * [Themes](#themes)
 
 <a name=installation>
 ### Installation
 
 TBD
+
 
 <a name=core>
 ### "Core" Plugins:
@@ -283,10 +291,12 @@ TBD
 
     TBD
 
+
 <a name=globals>
 ## Global settings
 
 TBD
+
 
 <a name=general>
 ## "General" Plugins:
@@ -389,15 +399,16 @@ TBD
 
 *   <a name=xterm-color-table>[xterm-color-table](https://github.com/guns/xterm-color-table.vim) ([top](#top))
 
-`:XtermColorTable` to create a new buffer with xterm colors
+    `:XtermColorTable` to create a new buffer with xterm colors
 
-While in the xterm colors buffer:
+    While in the xterm colors buffer:
 
-* `t` - toggle text visibility
-* `f` - set text color to the current color
-* `#` - yank current color
+    * `t` - toggle text visibility
+    * `f` - set text color to the current color
+    * `#` - yank current color
 
-`:h xterm-color-table.txt` for more help.
+    `:h xterm-color-table.txt` for more help.
+
 
 <a name=completion>
 ## Completion
@@ -411,9 +422,11 @@ While in the xterm colors buffer:
     > Note: to get rid of the "missing .tern-project file" warning, create a
     > global `~/.tern-project` file. see `:h .tern-sub-project`.
 
+
 <a name=fuzzy-search>
 ## Fuzzy search tools
 
+[unite]: https://github.com/Shougo/unite.vim
 *   <a name=unite.vim>[unite.vim][unite] ([top](#top))
 
     Search and display information from arbitrary sources like files, buffers,
@@ -424,44 +437,45 @@ While in the xterm colors buffer:
     See [unite-colorscheme](#unite-colorschema) for example command to use
     Unite to choose a colorscheme.
 
-[unite]: https://github.com/Shougo/unite.vim
 
-*   <a name=unite-outline>[unite outline](https://github.com/Shougo/unite-outline) ([top](#top))
+    *   <a name=unite-outline>[unite outline](https://github.com/Shougo/unite-outline) ([top](#top))
 
-    Unite source to display outline of the current file.
+        Unite source to display outline of the current file.
 
-    * `,O` - `:Unite outline` - show file outline
+        * `,O` - `:Unite outline` - show file outline
 
-*   <a name=unite-colorscheme>[unite-colorscheme](https://github.com/ujihisa/unite-colorscheme) ([top](#top))
+    *   <a name=unite-colorscheme>[unite-colorscheme](https://github.com/ujihisa/unite-colorscheme) ([top](#top))
 
-    A [unite.vim](#unite.vim) plugin. Privides source to choose color schemes.
+        A [unite.vim](#unite.vim) plugin. Privides source to choose color schemes.
 
-    Try:
+        Try:
 
-    `:Unite -no-start-insert -auto-preview colorscheme`
+        `:Unite -no-start-insert -auto-preview colorscheme`
 
-    Then try to navigate up and down and see what happens ;)
+        Then try to navigate up and down and see what happens ;)
 
-    > Note: actually this command aliased as `:THEME`
+        > Note: actually this command aliased as `:THEME`
+
 
 *   <a name=ctrlp>[CtrlP](https://github.com/ctrlpvim/ctrlp.vim) ([top](#top))
 
     Fuzzy file, buffer, mru, tag, etc finder.
 
-   This plugin has lots of options, see `:h ctrlp` for more.
+    This plugin has lots of options, see `:h ctrlp` for more.
 
-<a name=fuzzy-files>
-#### File search
+*   <a name=fzf>[FZF](https://github.com/junegunn/fzf) ([top](#top))
+
+
+*   <a name=fuzzy-files>File search ([top](#top))
 
     * `,,` - `:Files` - fuzzy find files using FZF
 
-<a name=fuzzy-buffers>
-#### Buffer search
+
+*   <a name=fuzzy-buffers>Buffer search ([top](#top))
 
     * `,b` - `:Unite buffer` - fuzzy search open buffers
 
-<a name=fuzzy-quickfix>
-#### Quickfix search
+*   <a name=fuzzy-quickfix>Quickfix search ([top](#top))
 
     * `,q` - `:CtrlPQuickfix` - fuzzy find within quickfix buffer
 
@@ -473,29 +487,23 @@ While in the xterm colors buffer:
 
     * `,k` - `:Ag ` - open prompt for entering search term
 
-<a name=fuzzy-lines>
-#### Line search
+*   <a name=fuzzy-lines>Line search ([top](#top))
 
     * `,l` - `:Lines` - fuzzy search lines in all opened buffers using FZF
 
-
-<a name=fuzzy-tags>
-#### Tags search
+*   <a name=fuzzy-tags>Tags search ([top](#top))
 
     * `,,` - `:Tags` - fuzzy find tag with FZF
     * `\t` - `:Btags` - fuzzy find bugger tag with FZF
 
-<a name=fuzzy-yank>
-#### Yank history search
+*   <a name=fuzzy-yank>Yank history search ([top](#top))
 
-
-    [YankRing.vim](http://github.com/vim-scripts/YankRing.vim) ([top](#top))
-
-    Maintains a history of previous yanks, changes and deletes
+    [YankRing.vim](http://github.com/vim-scripts/YankRing.vim) Maintains a history of previous yanks, changes and deletes
 
     * `,y` to show the yankring
     * `,[`/`,]` - to cycle the just-pasted text though the yankring.
     * `:h yankring.txt` and `:h yankring-tutorial` for more
+
 
 <a name=devplugins>
 ## Plugins for Developers:
@@ -551,17 +559,18 @@ While in the xterm colors buffer:
 
     * `:Merginal` - open branch list window
 
-      * `D`  - delete branch under cursor
-      * `C`  - checkout branch under cursor
-      * `M`  - merge branch under cursor
-      * `rb` - rebase current branch against the branch under cursor
-      * `rn` - rename branch agains the branch under cursor
+    * `D`  - delete branch under cursor
+    * `C`  - checkout branch under cursor
+    * `M`  - merge branch under cursor
+    * `rb` - rebase current branch against the branch under cursor
+    * `rn` - rename branch agains the branch under cursor
 
-      `:h merginal-branch-list` to see more bindings.
+    * `:h merginal-branch-list` to see more bindings.
 
-      `:h merginal` - to see the complete help
+    * `:h merginal` - to see the complete help
 
 *   <a name=gitgutter>[Vim Git Gutter](https://github.com/airblade/vim-gitgutter) ([top](#top))
+
     A Vim plugin which shows a git diff in the 'gutter' (sign column).
     It shows whether each line has been added, modified, and where lines have been removed.
 
@@ -611,7 +620,7 @@ While in the xterm colors buffer:
 
     it will display the number of syntax errors in the current file in the vim's status line.
 
-    use `:Errors` to display a window detailing the errors
+    * use `:Errors` to display a window detailing the errors
 
 *   <a name=tmux-navigator>[tmux-navigator](http://github.com/christoomey/vim-tmux-navigator) ([top](#top))
 
@@ -623,16 +632,26 @@ While in the xterm colors buffer:
 
     The default mappings are:
 
-        nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-        nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-        nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-        nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-        nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+    *   `Ctrl-h` - `:TmuxNavigateLeft<cr>`
+    *   `Ctrl-j` - `:TmuxNavigateDown<cr>`
+    *   `Ctrl-k` - `:TmuxNavigateUp<cr>`
+    *   `Ctrl-l` - `:TmuxNavigateRight<cr>`
+    *   `Ctrl-\` - `:TmuxNavigatePrevious<cr>`
 
-    TBD: make this configurable through ask.sh
 
 <a name=languages>
 ## Development languages and syntax support
+
+<a name=html>
+### HTML
+
+*   <a name=emmet>[Emmet](https://github.com/mattn/emmet-vim) ([top](#top))
+
+    [emmet.io](http://emmet.io) like html/css workflow plugin.
+
+    *   `<Ctrl-y>,` - expand emmet abbreviation. .e.g try it with `div>p#foo$*3>a`
+
+    > Note: it even works with HAML
 
 <a name=ruby>
 ### Ruby Support
@@ -641,8 +660,8 @@ While in the xterm colors buffer:
 
     Lightweight support for Ruby's Bundler
 
-    * `gf` when standing over a gem name in a Gemfile will go to gem's directory
-    * `:Bopen NAME` does bundle open NAME - opens gem NAME's lib diretory in the current window.
+    * `gf` - when standing over a gem name in a Gemfile will go to gem's directory
+    * `:Bopen NAME` - does bundle open NAME - opens gem NAME's lib diretory in the current window.
     * `:Bundle` - runs bundler
 
 *   <a name=vim-rake>[vim-rake](https://github.com/tpope/vim-rake) ([top](#top))
@@ -738,9 +757,10 @@ While in the xterm colors buffer:
     Extracts i18n strings from source files into .yml file.
 
     * `,z` - extract selected string
+
 *   <a name=vimscript>[vimscript] ([top](#top))
 
-* `,x` - to execute the current line of vimscript
+    *   `,x` - to execute the current line of vimscript
 
 *   <a name=themes>Themes ([top](#top))
 
@@ -749,5 +769,4 @@ While in the xterm colors buffer:
     * solarized
     * tomorrow
     * vividchalk
-
     * TBD

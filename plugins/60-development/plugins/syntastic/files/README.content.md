@@ -5,4 +5,4 @@
 
     it will display the number of syntax errors in the current file in the vim's status line.
 
-    use `:Errors` to display a window detailing the errors
+    * use `:Errors` to display a window detailing the errors

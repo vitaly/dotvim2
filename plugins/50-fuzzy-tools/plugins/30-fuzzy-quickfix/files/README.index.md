@@ -1,1 +1,1 @@
-  * [Quickfix search](#fuzzy-quickfix)
+    *   [Quickfix search](#fuzzy-quickfix)

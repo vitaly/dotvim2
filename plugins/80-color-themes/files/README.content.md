@@ -6,5 +6,4 @@
     * solarized
     * tomorrow
     * vividchalk
-
     * TBD

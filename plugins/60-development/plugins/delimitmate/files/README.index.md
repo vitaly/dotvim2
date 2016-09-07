@@ -1,4 +1,2 @@
-  * [delimitMate](#delimitMate)
-
-    automatic closing of quotes, parenthesis, brackets, etc.
-
+    *   [delimitMate](#delimitMate)
+        automatic closing of quotes, parenthesis, brackets, etc.

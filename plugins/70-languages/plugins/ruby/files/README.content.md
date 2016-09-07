@@ -6,8 +6,8 @@
 
     Lightweight support for Ruby's Bundler
 
-    * `gf` when standing over a gem name in a Gemfile will go to gem's directory
-    * `:Bopen NAME` does bundle open NAME - opens gem NAME's lib diretory in the current window.
+    * `gf` - when standing over a gem name in a Gemfile will go to gem's directory
+    * `:Bopen NAME` - does bundle open NAME - opens gem NAME's lib diretory in the current window.
     * `:Bundle` - runs bundler
 
 *   <a name=vim-rake>[vim-rake](https://github.com/tpope/vim-rake) ([top](#top))

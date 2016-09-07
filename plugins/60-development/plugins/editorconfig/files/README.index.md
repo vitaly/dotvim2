@@ -1,1 +1,1 @@
-  * [editorconfig](#editorconfig)
+    *   [editorconfig](#editorconfig)

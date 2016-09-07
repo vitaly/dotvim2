@@ -1,5 +1,3 @@
 
-<a name=fuzzy-yank>
-#### Yank history search
-
+*   <a name=fuzzy-yank>Yank history search ([top](#top))
 

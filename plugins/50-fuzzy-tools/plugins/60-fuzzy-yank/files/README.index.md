@@ -1,1 +1,1 @@
-  * [Yank history search](#fuzzy-yank)
+    *   [Yank history search](#fuzzy-yank)

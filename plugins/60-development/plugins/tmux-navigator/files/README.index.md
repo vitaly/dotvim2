@@ -1,1 +1,1 @@
-  * [tmux-navigator](#tmux-navigator)
+    *   [tmux-navigator](#tmux-navigator)

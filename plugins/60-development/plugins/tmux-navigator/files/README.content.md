@@ -9,10 +9,8 @@
 
     The default mappings are:
 
-        nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-        nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-        nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-        nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-        nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
-
-    TBD: make this configurable through ask.sh
+    *   `Ctrl-h` - `:TmuxNavigateLeft<cr>`
+    *   `Ctrl-j` - `:TmuxNavigateDown<cr>`
+    *   `Ctrl-k` - `:TmuxNavigateUp<cr>`
+    *   `Ctrl-l` - `:TmuxNavigateRight<cr>`
+    *   `Ctrl-\` - `:TmuxNavigatePrevious<cr>`

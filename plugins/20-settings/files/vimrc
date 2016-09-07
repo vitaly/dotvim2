@@ -88,7 +88,7 @@ set foldlevel=9
 set nofoldenable        " dont fold by default "
 
 " concealing
-set concealcursor=n
+set concealcursor=
 set conceallevel=2
 
 " extended '%' mapping for if/then/else/end etc

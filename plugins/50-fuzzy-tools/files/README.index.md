@@ -1,1 +1,2 @@
-* [fuzzy search tools](#fuzzy-search)
+
+*   [fuzzy search tools](#fuzzy-search)

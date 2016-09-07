@@ -1,1 +1,1 @@
-  * [Buffer search](#fuzzy-buffers)
+    *   [Buffer search](#fuzzy-buffers)

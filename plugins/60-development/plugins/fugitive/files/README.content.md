@@ -38,12 +38,12 @@
 
     * `:Merginal` - open branch list window
 
-      * `D`  - delete branch under cursor
-      * `C`  - checkout branch under cursor
-      * `M`  - merge branch under cursor
-      * `rb` - rebase current branch against the branch under cursor
-      * `rn` - rename branch agains the branch under cursor
+    * `D`  - delete branch under cursor
+    * `C`  - checkout branch under cursor
+    * `M`  - merge branch under cursor
+    * `rb` - rebase current branch against the branch under cursor
+    * `rn` - rename branch agains the branch under cursor
 
-      `:h merginal-branch-list` to see more bindings.
+    * `:h merginal-branch-list` to see more bindings.
 
-      `:h merginal` - to see the complete help
+    * `:h merginal` - to see the complete help

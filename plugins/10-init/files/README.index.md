@@ -108,7 +108,7 @@ You can configure dotvim2 in many ways, but the default installation (`make`)
 will just use the supplied default.
 
 You can re-configure it yourself by running `make reconfigure`, or editing
-`.config` files in the destination directory.
+`.config` files in the destination directory (you can run `make edit` to do that).
 
 All choices are saved for the next time, so when a new version comes out, your
 old answers will be preserved.
@@ -121,16 +121,16 @@ directory. This README file was generated.
 # load order
 
 * vimrc
-  * vimrc.plugins
-    * ~/.vimrc.plugins
-    * gvimrc.plugins
-      * ~/.gvimrc.plugins
-  * << here all plugins are actually loaded >>
-  * after/plugin/after.vim
-    * vimrc.after
-      * ~/.vimrc.after
-      * gvimrc.after
-        * ~/.gvimrc.after
+    * vimrc.plugins
+        * ~/.vimrc.plugins
+        * gvimrc.plugins
+            * ~/.gvimrc.plugins
+    * << here all plugins are actually loaded >>
+    * after/plugin/after.vim
+        * vimrc.after
+            * ~/.vimrc.after
+            * gvimrc.after
+                * ~/.gvimrc.after
 
 Each plugin can add content to files in the target vim directory by simply
 having the corresponding files present in the `plugin/files` directory
@@ -162,7 +162,7 @@ If a plugin has an `install.sh` file in the directory, it will be sourced.
 
 so the logic flow is as follows:
 
-- check for prompt.sh and exit if it returns false
+- check for `prompt.sh` and exit if it returns false
 - copy files from `files` directory
 - load all plugins in the `plugins` directory
 - run `install.sh` if exists
@@ -175,19 +175,23 @@ TBD
 
 ## example files structure
 
-    * plugins
-      * simple_directory_plugin
-        * files
-          * file_to_copy
-      * plugin_with_install_script
-        * files
-          * file_to_copy
-        * other_files
-          * other_files_to_copy
-        * install.sh
-        * plugins
-          * sub-plugin1
-            ...
+- `plugins`
+    - `simple_directory_plugin`
+        - `files`
+            - `file_to_copy`
+    - `plugin with a prompt`
+        - `files`
+            - `some file`
+        - `prompt.sh`
+    - `plugin_with_install_script`
+        - `files`
+            - `file_to_copy`
+        - `other_files`
+            - `other_files_to_copy`
+        - `install.sh`
+        - `plugins`
+            - `sub-plugin1`
+              ...
 
 ## plugin ordering
 
@@ -196,6 +200,7 @@ The plugins are loaded according to their sort order.
 <a name=top>
 ## Contents
 
-* [Installation](#installation)
-* [Core Plugins](#core)
-  * [vimproc](#vimproc)
+*   [Installation](#installation)
+
+*   [Core Plugins](#core)
+    *   [vimproc](#vimproc)

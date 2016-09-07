@@ -1,1 +1,2 @@
-* [Global settings](#globals)
+
+*   [Global settings](#globals)

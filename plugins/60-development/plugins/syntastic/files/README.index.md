@@ -1,1 +1,1 @@
-  * [syntastic](#syntastic) syntax checking on save
+    *   [syntastic](#syntastic) syntax checking on save

@@ -1,4 +1,2 @@
-  * [vim-airline](#airline)
-
-    better looking statusline
-
+    *   [vim-airline](#airline)
+        better looking statusline

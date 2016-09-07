@@ -1,4 +1,5 @@
 
+[unite]: https://github.com/Shougo/unite.vim
 *   <a name=unite.vim>[unite.vim][unite] ([top](#top))
 
     Search and display information from arbitrary sources like files, buffers,
@@ -9,10 +10,9 @@
     See [unite-colorscheme](#unite-colorschema) for example command to use
     Unite to choose a colorscheme.
 
-[unite]: https://github.com/Shougo/unite.vim
 
-*   <a name=unite-outline>[unite outline](https://github.com/Shougo/unite-outline) ([top](#top))
+    *   <a name=unite-outline>[unite outline](https://github.com/Shougo/unite-outline) ([top](#top))
 
-    Unite source to display outline of the current file.
+        Unite source to display outline of the current file.
 
-    * `,O` - `:Unite outline` - show file outline
+        * `,O` - `:Unite outline` - show file outline

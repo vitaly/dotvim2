@@ -1,1 +1,2 @@
-* [General Plugins](#general)
+
+*   [General Plugins](#general)

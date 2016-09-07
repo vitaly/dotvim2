@@ -1,4 +1,4 @@
 
-<a name=fuzzy-buffers>
-#### Buffer search
+
+*   <a name=fuzzy-buffers>Buffer search ([top](#top))
 
