@@ -6,7 +6,7 @@ This is the second incarnation of my dotvim configuration
 
 V1 can be found [here](https://github.com/astrails/dotvim)
 
-> **IMPORTANT:** Please see [Status](#status) section below.
+> **IMPORTANT:** Please be sure to read the [installation](#installation) section!
 
 ## Why
 
@@ -37,30 +37,10 @@ So my goals for this v2 release are:
 
 ## Status
 
-This is an early work-in-progress. I'm  still figuring things out, and moving
-stuff around quite a bit.
+dotvim2 seems to be stable enough at this point, I'll probably release 1.0 soon.
 
-I am using it as my primary vim config, but it might be too early for general
-consumption. That being said, it is already useful, and (at least in my
-experience) works better and faster then the old one.
-
-What **might** come next:
-
-* I'm not completely happy with the file structure. While its very easy to add
-  and change stuff, its a bit too 'messy', with too many directory levels, files, etc.
-  I might play with layout to make it more 'flat'.
-
-* Also thinking about using single file with "magic" comments to separate into
-  various destinations instead of having a directory with many files.
-
-  e.g. instead of having `files/vimrc.plugins`, `files/vimrc.before`,
-  `files/vimrc.after` for the some plugin there would be just `files` **file**
-  with comments separating into various destinations. This is pretty much
-  speculation at this point. Ideas area welcome ;)
-
-* more language specific configurations. I haven't yet transfered all my
-  language configs from v1, as I want to only add stuff I'm using **right
-  now**.
+Note that not all plugins from v1 made it into v2, if you are missing anything
+major, please let me know ;)
 
 ## Major changes
 
@@ -84,37 +64,57 @@ So I just went with [dein](https://github.com/Shougo/dein.vim), which is the
 replacement from the author of NeoBundle. NeoBundle was fast, Dein supposed to
 be faster still.
 
+### TBD
+
+<a name=installation>
+## Installation
+
+Clone this repository and run `make`.
+
+Installation will ask you a ton of questions and then **generate** your vim
+configuration in the `VIM_DIR` directory. The default is `./dist`, but you can
+pass it anything through environment or arguments. e.g.:
+
+    VIM_DIR=~/.vim make
+
+if you use a directory other then `~/.vim` you will need to link it so that vim can find it, e.g.:
+
+    ln -sfn YOUR_VIMDIR_PATH ~/.vim
+
+Once your configuration is generated and linked you can run `vim`, it will
+detect missing plugins and install them on the first run.
+
+### Configuration
+
+Your configuration choices are stored in `VIM_DIR/.config`. You can edit it
+directly or just run `make edit`.
+
+You will be asked quesions during the install only if the config file doesn't
+already contain the answer.
+
+`make reconfigure` will ask all questions all over again, with your previous
+choices used as defaults.
+
+During the installation a README file is generated in the destination
+directory with just the information relevant to your own configuration chocies.
+
+The README file in the project repository was generated with my own
+configuration ;).
+
 ###  YouCompleteMe
 
-Another space that changed considerably is autocompletion. V1 used AutoComplPop
-for completion. V2 uses YouCompleteMe.
+Dotvim2 (optionally) uses YouCompleteMe for code completion (v1 used AutoComplPop).
 
 It is a quite a bit more complex and not without its problems, but it seems to
 be **the** completion plugin to use at this time.
 
-### TBD
+> Note: You will need `cmake` installed if you want this to work.
 
-## Installation
-
-The main idea is that vim configuration is not a static file, but instead is
-generated from templates according to user input. Default generation directory
-is `dist` under the source tree, but you can change it by passing `VIM_DIR`
-environment variable. E.g. `VIM_DIR=~/.dotvim2 make`
-
-Then you can link your `~/.vim` to your old config or this one when you are
-playing with it.
-
-You can configure dotvim2 in many ways, but the default installation (`make`)
-will just use the supplied default.
-
-You can re-configure it yourself by running `make reconfigure`, or editing
-`.config` files in the destination directory (you can run `make edit` to do that).
-
-All choices are saved for the next time, so when a new version comes out, your
-old answers will be preserved.
-
-During the installation a README file is generated in the destination
-directory. This README file was generated.
+> **IMPORTANT:** YouCompleteMe installation seems to be quite problematic. Once
+> particular problem that happened to me a lot is git failing to featch all the
+> submodules from github. In case of such a failure you can try to run `make
+> completion`, which will retry just tthye completion installation. you might
+> need to run it seveal time until it succeeds.
 
 ## TBD
 
