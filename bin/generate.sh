@@ -8,13 +8,13 @@ ASK_VERBOSE="$VERBOSE"
 
 source vendor/ask.sh/lib/ask.sh
 
-if [ -z "$VIM_DIR" ]; then
-  die "please define VIM_DIR"
-fi
+function non_dotvim2_dir()
+{
+  [ -d "$VIM_DIR" -a ! -d "$VIM_DIR/dein" ]
+}
 
-VIM_DIR="$(cd "$VIM_DIR"; pwd)"
-
-function non_dotvim2_dir_warning() {
+function non_dotvim2_dir_warning()
+{
   red "> Your vim directory $VIM_DIR already exists but doesn't seem to be created by dotvim2"
   bold
   red -e "> Proceed at your own risk!!!\n"
@@ -34,18 +34,13 @@ function non_dotvim2_dir_warning() {
   yellow -e "> WARNING: installing into non dotvim2 directory!\n\n\n"
 }
 
-if [ -d "$VIM_DIR" ]; then
-  if [ ! -d "$VIM_DIR/dein" ]; then
-    non_dotvim2_dir_warning
-  fi
-else
-  mkdir -pv "$VIM_DIR"
-fi
+function non_standard_dir()
+{
+  [ ! -d ~/.vim ] || [ "$VIM_DIR" != "$(cd ~/.vim; pwd)" ]
+}
 
-init ${VIM_DIR}/.config
-
-if [ "$VIM_DIR" != "$(cd ~/.vim; pwd)" ]; then
-
+function non_standard_dir_warning()
+{
   desc <<-END
 Your installation directory is $VIM_DIR
      Make sure you link this directory into ~/.vim
@@ -53,7 +48,28 @@ Your installation directory is $VIM_DIR
 > Note: you can override the default directory by passing VIM_DIR to make: 'VIM_DIR=... make'
 END
   ask bool vimdir_warning "I understand" y
-fi
+}
+
+function init_vimdir()
+{
+  [ -n "$VIM_DIR" ] || die "please define VIM_DIR"
+
+  if non_dotvim2_dir; then
+    non_dotvim2_dir_warning
+  else
+    mkdir -pv "$VIM_DIR"
+  fi
+
+  VIM_DIR="$(cd "$VIM_DIR"; pwd)"
+
+  init ${VIM_DIR}/.config
+
+  if non_standard_dir; then
+    non_standard_dir_warning
+  fi
+}
+
+init_vimdir
 
 source lib/common.sh
 
