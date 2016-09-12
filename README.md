@@ -110,10 +110,10 @@ be **the** completion plugin to use at this time.
 
 > Note: You will need `cmake` installed if you want this to work.
 
-> **IMPORTANT:** YouCompleteMe installation seems to be quite problematic. Once
+> **IMPORTANT:** YouCompleteMe installation seems to be quite problematic. One
 > particular problem that happened to me a lot is git failing to featch all the
 > submodules from github. In case of such a failure you can try to run `make
-> completion`, which will retry just tthye completion installation. you might
+> completion`, which will retry YouCompleteMe installation. you might
 > need to run it seveal time until it succeeds.
 
 ## TBD

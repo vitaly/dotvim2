@@ -113,7 +113,7 @@ be **the** completion plugin to use at this time.
 > **IMPORTANT:** YouCompleteMe installation seems to be quite problematic. One
 > particular problem that happened to me a lot is git failing to featch all the
 > submodules from github. In case of such a failure you can try to run `make
-> completion`, which will retry just tthye completion installation. you might
+> completion`, which will retry YouCompleteMe installation. you might
 > need to run it seveal time until it succeeds.
 
 ## TBD
