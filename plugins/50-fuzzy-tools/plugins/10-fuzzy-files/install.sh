@@ -6,7 +6,7 @@ if multi_enum; then
   desc <<END
 What plugin to use for fuzzy file search?:
 
-Note: this only affcts which of the options will be bound to '<leader>,'
+Note: this only affect which of the options will be bound to '<leader>,'
 END
   ask enum fuzzy_files "files search with?" 1
 else
