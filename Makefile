@@ -28,7 +28,7 @@ update:
 YCM_DIR = ${VIM_DIR}/dein/repos/github.com/Valloric/YouCompleteMe
 
 ${YCM_DIR}:
-	mkdir -p ${VIM_DIR}/dein/repos/github.com/Valloric:
+	mkdir -p ${VIM_DIR}/dein/repos/github.com/Valloric
 	cd ${VIM_DIR}/dein/repos/github.com/Valloric
 	git clone https://github.com/Valloric/YouCompleteMe.git YouCompleteMe
 
