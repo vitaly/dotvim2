@@ -61,9 +61,8 @@ function no_vimrc()
 function no_vimrc_warning()
 {
   desc <<END
-You don't have ~/.vimrc file. Newer versions of Vim can use ~/.vim/vimrc
-directly and do not require this link to work, but if you are using an older
-version you will need to create it.
+You don't have ~/.vimrc file. Newer versions of Vim can use ~/.vim/vimrc, but older versions require ~/.vimrc
+so you might need to create a link.
 END
 
 enum ignore "- I'll handle the link myself"
