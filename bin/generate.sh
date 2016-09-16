@@ -41,13 +41,40 @@ function non_standard_dir()
 
 function non_standard_dir_warning()
 {
-  desc <<-END
+  desc <<END
 Your installation directory is $VIM_DIR
-     Make sure you link this directory into ~/.vim
+     Make sure you link:
+       ~/.vim -> "$VIM_DIR"
+     Depending on your version of vim you might also need to link:
+       ~/.vimrc -> "$VIM_DIR/vimrc"
 
 > Note: you can override the default directory by passing VIM_DIR to make: 'VIM_DIR=... make'
 END
   ask bool vimdir_warning "I understand" y
+}
+
+function no_vimrc()
+{
+  test ! -f ~/.vimrc
+}
+
+function no_vimrc_warning()
+{
+  desc <<END
+You don't have ~/.vimrc file. Newer versions of Vim can use ~/.vim/vimrc
+directly and do not require this link to work, but if you are using an older
+version you will need to create it.
+END
+
+enum ignore "- I'll handle the link myself"
+enum link "  - create link ~/.vimrc -> '$VIM_DIR/vimrc'"
+
+ask enum vimrc_link "How to handle missing ~/.vimrc link?"
+
+case $vimrc_link in
+  ignore) ;;
+  link) ln -sfvn "$VIM_DIR/vimrc" ~/.vimrc
+esac
 }
 
 function init_vimdir()
@@ -66,6 +93,10 @@ function init_vimdir()
 
   if non_standard_dir; then
     non_standard_dir_warning
+  fi
+
+  if no_vimrc; then
+    no_vimrc_warning
   fi
 }
 
