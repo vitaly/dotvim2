@@ -81,6 +81,9 @@ if you use a directory other then `~/.vim` you will need to link it so that vim 
 
     ln -sfn YOUR_VIMDIR_PATH ~/.vim
 
+> Note: Depending on your version of vim you might also have to link `~/.vimrc` => `YOUR_VIMDIR_PATH/vimrc`.
+> Newer versions can use `~/.vim/vimrc`, but older versions will only look for `~/.vimrc`
+
 Once your configuration is generated and linked you can run `vim`, it will
 detect missing plugins and install them on the first run.
 
