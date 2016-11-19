@@ -56,6 +56,13 @@ your directory of choice. You can (and its recommended to) keep this generated
 directory content in git as well, so that after every upgrade or configuration
 change you can see the exact difference.
 
+> Note: while the idea is to have this very customizable, there are still many
+> parts and plugins that are hard-coded. Those are mostly those plugins and
+> settings that I consider to be essential, ans so I didn't bother (yet) to
+> allow for customization. That being said, its very easy to make any part of
+> setup configurable. Just look at any `prompt.sh` file inside `plugins`
+> directory. Oh, and **pull requests are welcome ;)**.
+
 ### dein
 
 NeoBundle was replaced with dein. This time around it seems that this time
@@ -224,6 +231,8 @@ The plugins are loaded according to their sort order.
         Use the repeat command "." with supported plugins
     *   [vim-session](#vim-session)
         Extended session management for Vim (:mksession on steroids)
+    *   [vim-switch](#vim-switch)
+        Simple Vim plugin to switch segments of text with predefined replacements.
     *   [Utl.vim](#utl.vim)
         url based hyperlinks for text files
     *   [xterm-color-table](#xterm-color-table)
@@ -377,6 +386,7 @@ TBD
     * `,cc` - add commenting
     * `,cu` - Uncomment
     * check docs for more
+
 *   <a name=vim-session>[vim-session](https://github.com/xolox/vim-session) ([top](#top))
 
     Extended session management for Vim (`:mksession` on steroids)
@@ -388,6 +398,15 @@ TBD
     When runnin in a graphical vim:
 
     * `:RestartVim<CR>` - This command saves your current editing session, restarts Vim and restores your editing session.
+
+*   <a name=vim-switch>[vim-switch](https://github.com/AndrewRadev/switch.vim) ([top](#top))
+
+    Simple Vim plugin to switch segments of text with predefined replacements.
+
+    It will switch `"foo"` to `'foo'` to `:foo`. or `{:foo => bar}` to `{foo: bar}`,
+    etc. See `:h switch` for more.
+
+    * `\`` - `:Switch<cr>`
 
 *   <a name=utl.vim>[utl.vim](https://github.com/vim-scripts/utl.vim) ([top](#top))
 

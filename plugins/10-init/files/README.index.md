@@ -56,6 +56,13 @@ your directory of choice. You can (and its recommended to) keep this generated
 directory content in git as well, so that after every upgrade or configuration
 change you can see the exact difference.
 
+> Note: while the idea is to have this very customizable, there are still many
+> parts and plugins that are hard-coded. Those are mostly those plugins and
+> settings that I consider to be essential, ans so I didn't bother (yet) to
+> allow for customization. That being said, its very easy to make any part of
+> setup configurable. Just look at any `prompt.sh` file inside `plugins`
+> directory. Oh, and **pull requests are welcome ;)**.
+
 ### dein
 
 NeoBundle was replaced with dein. This time around it seems that this time

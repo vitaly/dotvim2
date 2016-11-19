@@ -107,4 +107,4 @@ load_all plugins/*
 
 finish
 bold
-info -e "\nDOME"
+info -e "\nDONE: $VIM_DIR"
