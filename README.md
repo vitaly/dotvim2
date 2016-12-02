@@ -501,11 +501,9 @@ TBD
 
     * `,q` - `:CtrlPQuickfix` - fuzzy find within quickfix buffer
 
-*   <a name=vim-ag>[The Silver Searcher](https://github.com/ggreer/the_silver_searcher) ([top](#top))
+*   <a name=vim-ag>[vim-ag](https://github.com/rking/ag.vim) ([top](#top))
 
-    The Silver Searcher (ag) is a code-searching tool similar to ack, but faster..
-
-    The actual vim integration is provided by [FZF](#fzf)
+    Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 
     * `,k` - `:Ag ` - open prompt for entering search term
 

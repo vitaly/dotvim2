@@ -1,0 +1,2 @@
+" need to re-define it becase FZF defins another version
+command! -bang -nargs=* -complete=file Ag call ag#Ag('grep<bang>',<q-args>)
