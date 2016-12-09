@@ -1,0 +1,1 @@
+call add(g:gutentags_project_info, {'type': 'javascript', 'file': 'package.json'})
