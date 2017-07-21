@@ -1,1 +1,1 @@
-call dein#add('greplace.vim')
+call dein#add('vim-scripts/greplace.vim')

@@ -1,4 +1,4 @@
-call dein#add('utl.vim')
+call dein#add('vim-scripts/utl.vim')
 
 " config help: <url:~/.vim/dein/.dein/plugin/utl_rc.vim#r=utl_cfg_hdl_scm_http>
 if has("mac")

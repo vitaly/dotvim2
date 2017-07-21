@@ -1,4 +1,4 @@
-call dein#add('YankRing.vim')
+call dein#add('vim-scripts/YankRing.vim')
 
 let g:yankring_replace_n_pkey = '<leader>['
 let g:yankring_replace_n_nkey = '<leader>]'
