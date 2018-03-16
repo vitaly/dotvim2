@@ -222,7 +222,6 @@ The plugins are loaded according to their sort order.
     *   [vim-airline](#airline)
         better looking statusline
     *   [greplace.vim](#greplace.vim)
-    *   [Gundo](#gundo)
     *   [nerdtree](#nerdtree)
     *   [nerdtree-git](#nerdtree-git)
     *   [nerdtreetabs](#nerdtreetabs)
@@ -233,6 +232,7 @@ The plugins are loaded according to their sort order.
         Extended session management for Vim (:mksession on steroids)
     *   [vim-switch](#vim-switch)
         Simple Vim plugin to switch segments of text with predefined replacements.
+    *   [UndoTree](#undotree)
     *   [Utl.vim](#utl.vim)
         url based hyperlinks for text files
     *   [xterm-color-table](#xterm-color-table)
@@ -336,15 +336,6 @@ TBD
     * `:Greplace` - Incorporate the modifications from the replace buffer into
       the corresponding files.
 
-*   <a name=gundo>[Gundo](https://github.com/sjl/gundo.vim) ([top](#top))
-
-    Homepage is [here](http://sjl.bitbucket.org/gundo.vim/)
-
-    Graphs your vim undo tree in a side window.
-
-    * `,u` - toggle undo window
-    * `:h gundo.txt` - more help
-
 *   <a name=nerdtree>[nerdtree](http://github.com/scrooloose/nerdtree) ([top](#top))
 
     vim script to give you a tree explorer
@@ -407,6 +398,14 @@ TBD
     etc. See `:h switch` for more.
 
     * `\`` - `:Switch<cr>`
+
+*   <a name=undotree>[Undo Tree](https://github.com/mbbill/undotree) ([top](#top))
+
+    Graphs your vim undo tree in a side window.
+
+    * `u` - toggle undo window
+
+    * `:h undotree.txt` - more help
 
 *   <a name=utl.vim>[utl.vim](https://github.com/vim-scripts/utl.vim) ([top](#top))
 
