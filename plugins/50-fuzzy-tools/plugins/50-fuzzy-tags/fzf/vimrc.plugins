@@ -1,2 +1,2 @@
-nmap <leader>t :Tags<cr>
-nmap <localleader>t :BTags<cr>
+nmap <leader>T :Tags<cr>
+nmap <leader>t :BTags<cr>

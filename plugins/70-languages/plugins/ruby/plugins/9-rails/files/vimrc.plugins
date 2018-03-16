@@ -10,5 +10,5 @@ call dein#add('thoughtbot/vim-rspec')
 " Rails i18n extraction plugin
 call dein#add('stefanoverna/vim-i18n')
 
-" vim-rspec
-map <Leader>r :call RunNearestSpec()<CR>
+" vim-[R]spec
+map <localleader>r :call RunNearestSpec()<CR>

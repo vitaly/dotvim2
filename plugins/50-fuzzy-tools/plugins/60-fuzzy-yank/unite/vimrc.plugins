@@ -1,1 +1,2 @@
-nmap <leader>y :Unite -start-insert -no-split -buffer-name=YankHistory history/yank<cr>
+" [S]earch [Y]ankring
+nmap <leader>sy :Unite -start-insert -no-split -buffer-name=YankHistory history/yank<cr>

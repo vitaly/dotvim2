@@ -1,1 +1,1 @@
-    * `,b` - `:Unite buffer` - fuzzy search open buffers
+    * `<leader>bb` - `:Unite buffer` - fuzzy search open buffers

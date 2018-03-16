@@ -1,1 +1,1 @@
-    * `,y` - `:Unite history/yank` - show yank history search
+    * `<leader>sy` - `:Unite history/yank` - show yank history search

@@ -3,6 +3,6 @@
 
     Graphs your vim undo tree in a side window.
 
-    * `<Leader>u` - toggle undo window
+    * `<leader>u` - toggle undo window
 
     * `:h undotree.txt` - more help

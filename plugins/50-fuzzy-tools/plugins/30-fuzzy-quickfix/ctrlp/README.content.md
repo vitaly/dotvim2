@@ -1,1 +1,1 @@
-    * `,q` - `:CtrlPQuickfix` - fuzzy find within quickfix buffer
+    * `<leader>sq` - `:CtrlPQuickfix` - fuzzy find within quickfix buffer

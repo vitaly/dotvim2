@@ -38,21 +38,21 @@
 
     Refactoring tool for Ruby in vim!
 
-    * `,rap`  :RAddParameter           - Add Parameter(s) to a method
-    * `,rcpc` :RConvertPostConditional - Convert Post Conditional
-    * `,rel`  :RExtractLet             - Extract to Let (Rspec)
-    * `,rec`  :RExtractConstant        - Extract Constant (visual selection)
-    * `,relv` :RExtractLocalVariable   - Extract Local Variable (visual selection)
-    * `,rit`  :RInlineTemp             - Inline Temp. replace temp parameter by direct function call
-    * `,rrlv` :RRenameLocalVariable    - Rename Local Variable (visual selection/variable under the cursor
-    * `,rriv` :RRenameInstanceVariable - Rename Instance Variable (visual selection)
-    * `,rem`  :RExtractMethod          - Extract Method (visual selection)
+    * `<leader>rap`  :RAddParameter           - Add Parameter(s) to a method
+    * `<leader>rcpc` :RConvertPostConditional - Convert Post Conditional
+    * `<leader>rel`  :RExtractLet             - Extract to Let (Rspec)
+    * `<leader>rec`  :RExtractConstant        - Extract Constant (visual selection)
+    * `<leader>relv` :RExtractLocalVariable   - Extract Local Variable (visual selection)
+    * `<leader>rit`  :RInlineTemp             - Inline Temp. replace temp parameter by direct function call
+    * `<leader>rrlv` :RRenameLocalVariable    - Rename Local Variable (visual selection/variable under the cursor
+    * `<leader>rriv` :RRenameInstanceVariable - Rename Instance Variable (visual selection)
+    * `<leader>rem`  :RExtractMethod          - Extract Method (visual selection)
 
 *   <a name=blockle)>[blockle.vim](https://github.com/vim-scripts/blockle.vim) ([top](#top))
 
     Toggle ruby blocks style, e.g `{}` to `do .. end`
 
-    * `,B` - toggle block style
+    * `<localleader>B` - toggle block style
 
     > NOTE: there is an unfortunate interaction with delimitMate, the opening
     > brase gets completed. i.e. you get `{} ... }`

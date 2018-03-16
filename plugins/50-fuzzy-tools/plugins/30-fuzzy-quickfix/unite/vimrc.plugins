@@ -1,3 +1,4 @@
 call dein#add('osyo-manga/unite-quickfix')
 
-nmap <leader>q :Unite -start-insert -no-split -buffer-name=QuickFix quickfix<cr>
+" [S]earch [Q]uickfix
+nmap <leader>sq :Unite -start-insert -no-split -buffer-name=QuickFix quickfix<cr>

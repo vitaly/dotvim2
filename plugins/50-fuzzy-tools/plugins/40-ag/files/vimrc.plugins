@@ -1,1 +1,2 @@
-nmap <leader>k :Ag<space>
+" smart search
+nmap <leader>/ :Ag<space>

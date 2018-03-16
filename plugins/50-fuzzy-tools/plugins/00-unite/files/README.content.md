@@ -15,4 +15,4 @@
 
         Unite source to display outline of the current file.
 
-        * `,O` - `:Unite outline` - show file outline
+        * `<leader>O` - `:Unite outline` - show file outline

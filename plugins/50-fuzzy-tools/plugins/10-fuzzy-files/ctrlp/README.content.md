@@ -1,3 +1,3 @@
-    * `,,` - `:CtrlP` - fuzzy find files
-    * `,.` - `:CtrlPClearCache` followed by `:CtrlP` - clears the cache
+    * `<leader>ff` - `:CtrlP` - fuzzy find files
+    * `<leader>fF` - `:CtrlPClearCache` followed by `:CtrlP` - clears the cache
       before search

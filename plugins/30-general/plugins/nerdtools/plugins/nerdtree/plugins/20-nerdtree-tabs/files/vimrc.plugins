@@ -1,7 +1,7 @@
 call dein#add('jistr/vim-nerdtree-tabs')
 
-" nerdtree with tqbs
-" Ctrl-P to Display the file browser tree
-nmap <C-P> :NERDTreeTabsToggle<CR>
-" ,p to show current file in the tree
-nmap <leader>p :NERDTreeFind<CR>
+" nerdtree with tabs
+" display the [F]ile browser [T]ree
+nmap <leader>ft :NERDTreeTabsToggle<CR>
+" show current file in the tree
+nmap <leader>0 :NERDTreeFind<CR>

@@ -1,1 +1,1 @@
-    * `,l` - `:Lines` - fuzzy search lines in all opened buffers using FZF
+    * `<leader>sl` - `:Lines` - fuzzy search lines in all opened buffers using FZF

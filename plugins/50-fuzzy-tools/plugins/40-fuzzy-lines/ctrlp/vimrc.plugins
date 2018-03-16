@@ -1,1 +1,2 @@
-nmap <leader>l :CtrlPLine<cr>
+" [S]earch [L]ine
+nmap <leader>sl :CtrlPLine<cr>

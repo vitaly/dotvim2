@@ -3,4 +3,5 @@
 
     NERDTree and tabs together in Vim, painlessly
 
-    * `Ctrl-P` - open directory browser
+    * `<leader>ft` - toggle directory browser
+    * `<leader>0` - open directory browser and find the current file in it

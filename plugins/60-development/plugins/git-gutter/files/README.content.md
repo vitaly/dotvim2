@@ -27,8 +27,10 @@
     Bindings:
 
     * `]c` - jump to next hunk
+    * `<localleader>n` - jump to next hunk
     * `[c` - jump to previous hunk
-    * `,hs` - stage hunk
-    * `,hr` - revert hunk
+    * `<localleader>p` - jump to previous hunk
+    * `<leader>hs` - stage hunk
+    * `<leader>hr` - revert hunk
 
     There are quite some customization options. see help.

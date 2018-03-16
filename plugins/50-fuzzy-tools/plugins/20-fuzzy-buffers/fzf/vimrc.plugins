@@ -1,1 +1,1 @@
-nmap <leader>b :Buffers<cr>
+nmap <leader>bb :Buffers<cr>

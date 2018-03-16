@@ -3,4 +3,4 @@
 
     Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 
-    * `,k` - `:Ag ` - open prompt for entering search term
+    * `<leader>/` - `:Ag ` - open prompt for entering search term

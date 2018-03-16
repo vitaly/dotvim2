@@ -17,4 +17,4 @@ call dein#add('tpope/vim-rake')
 " ruby refactoring
 call dein#add('ecomba/vim-ruby-refactoring')
 
-let g:blockle_mapping = '<Leader>B'
+let g:blockle_mapping = '<localleader>B'

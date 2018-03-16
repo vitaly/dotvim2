@@ -1,1 +1,1 @@
-    * `,,` - `:Files` - fuzzy find files using FZF
+    * `<leader>ff` - `:Files` - fuzzy find files using FZF

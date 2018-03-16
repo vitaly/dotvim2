@@ -1,2 +1,2 @@
-nmap <leader>, :Files<cr>
-
+" [F]ind [F]iles
+nmap <leader>ff :Files<cr>

@@ -18,11 +18,11 @@
 
          :grep with git-grep as 'grepprg'.
 
-    *    `,g`
+    *    `<leader>gg`
 
          shortcut to run :Ggrep
 
-    *   `//`
+    *   `<leader>gw`
 
         global git search for the word under the cursor for for selection (in visual mode)
 

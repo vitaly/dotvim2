@@ -1,1 +1,1 @@
-    * `,,` - `:Unite tag` - fuzzy find tag
+    * `<leader>ff` - `:Unite tag` - fuzzy find tag

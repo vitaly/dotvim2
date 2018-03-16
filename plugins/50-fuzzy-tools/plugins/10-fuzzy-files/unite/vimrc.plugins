@@ -1,1 +1,1 @@
-nmap <leader>, :Unite -start-insert -no-split -buffer-name=files file_rec/async:!<cr>
+nmap <leader>ff :Unite -start-insert -no-split -buffer-name=files file_rec/async:!<cr>

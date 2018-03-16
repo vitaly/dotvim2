@@ -1,1 +1,1 @@
-    * `,b` - `:Buffers` - fuzzy search open buffers with [FSF](#fsf)
+    * `<leader>bb` - `:Buffers` - fuzzy search open buffers with [FSF](#fsf)

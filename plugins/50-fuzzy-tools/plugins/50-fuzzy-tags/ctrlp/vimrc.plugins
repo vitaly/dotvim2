@@ -1,1 +1,2 @@
-nmap <leader>t :CtrlPTag<cr>
+" [S]earch [T]ags
+nmap <leader>sT :CtrlPTag<cr>

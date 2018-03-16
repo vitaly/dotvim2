@@ -37,10 +37,10 @@
 
     Bindings:
 
-    * `,r` - `RunNearestSpec`
+    * `<localleader>r` - `RunNearestSpec`
 
 *   <a name=i18n>[vim-i18n](https://github.com/stefanoverna/vim-i18n) ([top](#top))
 
     Extracts i18n strings from source files into .yml file.
 
-    * `,z` - extract selected string
+    * `<leader>z` - extract selected string

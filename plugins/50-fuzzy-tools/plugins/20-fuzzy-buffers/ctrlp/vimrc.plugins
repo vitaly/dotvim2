@@ -1,1 +1,1 @@
-nmap <leader>b :CtrlPBuff<cr>
+nmap <leader>bb :CtrlPBuff<cr>

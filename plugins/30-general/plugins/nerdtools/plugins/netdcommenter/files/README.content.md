@@ -3,7 +3,7 @@
 
     Vim plugin for intensely orgasmic commenting
 
-    * `,/` - toggle comment
-    * `,cc` - add commenting
-    * `,cu` - Uncomment
+    * `<leader>;` - toggle comment
+    * `<leader>cc` - add commenting
+    * `<leader>cu` - Uncomment
     * check docs for more

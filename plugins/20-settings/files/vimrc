@@ -53,6 +53,7 @@ set sw=4                " number of spaces for indent
 set et                  " expand tabs into spaces
 
 set ttimeoutlen=50      " fast Esc to normal mode
+set timeoutlen=5000     " give 5s to complete mapping sequence
 
 " mouse settings
 if has("mouse")
@@ -97,27 +98,35 @@ runtime macros/matchit.vim
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
-" toggle highlight trailing whitespace
-nmap <silent> <leader>s :set nolist!<CR>
+" [H]ighlight [W]hitespace
+nmap <silent> <leader>hw :set nolist!<CR>
 
-" Ctrl-N to disable search match highlight
-nmap <silent> <C-N> :silent noh<CR>
+" search match [H]ighlight [C]lear
+nmap <silent> <leader>hc :silent noh<CR>
 
-" Ctrol-E to switch between 2 last buffers
-nmap <C-E> :b#<CR>
+" switch between 2 last buffers
+nmap <leader><Tab> :b#<CR>
 
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
 
-" ,n to get the next location (compilation errors, grep etc)
+" [N]ext
 nmap <leader>n :cn<CR>
-nmap <leader>N :cp<CR>
+" [P]revious
+nmap <leader>p :cp<CR>
 
-" ,d to diffupdate
-nmap <leader>d :diffupdate<CR>
-nmap <leader>dp :diffput<CR>
-nmap <leader>dg :diffget<CR>
+" [D]iff [U]pdate
+nmap <localleader>du :diffupdate<CR>
+" [D]iff [P]ut
+nmap <localleader>dp :diffput<CR>
+" [D]iff [G]et
+nmap <localleader>dg :diffget<CR>
+" [G]it [N]ext
+nmap <localleader>n ]c
+" [G]it [P]rev
+nmap <localleader>p [c
+
 
 " driving me insane this thing
 command Q q

@@ -5,5 +5,5 @@
 
     The actual vim integration is provided by [FZF](#fzf)
 
-    * `,k` - `:Ag ` - open prompt for entering search term
+    * `<leader>/` - `:Ag ` - open prompt for entering search term
 

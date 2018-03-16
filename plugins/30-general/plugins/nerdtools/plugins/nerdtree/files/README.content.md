@@ -3,6 +3,6 @@
 
     vim script to give you a tree explorer
 
-    * `Ctrl-P` - open directory browser (**Note:** this is now handled by
+    * `<leader>ft` - toggle directory browser (**Note:** this is now handled by
       [nerdtree-tabs](#nerdtreetabs) (see below))
-    * `,p` - to find and highlight the currently open file in the tree
+    * `<leader>0` - to find and highlight the currently open file in the tree

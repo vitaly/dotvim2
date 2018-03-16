@@ -1,1 +1,2 @@
-nmap <leader>q :CtrlPQuickfix<cr>
+" [S]earch [Q]uickfix
+nmap <leader>sq :CtrlPQuickfix<cr>

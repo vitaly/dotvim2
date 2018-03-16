@@ -27,15 +27,15 @@ au InsertLeave * set nopaste
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 cnoremap %^ <C-R>=expand('%:p:h').'/'<cr>
 
-" remove trailing spaces
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
+" te[X]t [D]elete [W]hitespace
+nnoremap <leader>xdw :%s/\s\+$//<cr>:let @/=''<cr>
 
 " Copy current buffer path relative to root of VIM session to system clipboard
-nnoremap <Leader>Yp :let @*=expand("%")<cr>:echo "Copied file path to clipboard"<cr>
+nnoremap <leader>Yp :let @*=expand("%")<cr>:echo "Copied file path to clipboard"<cr>
 " Copy current filename to system clipboard
-nnoremap <Leader>Yf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
+nnoremap <leader>Yf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
 " Copy current buffer path without filename to system clipboard
-nnoremap <Leader>Yd :let @*=expand("%:h")<cr>:echo "Copied file directory to clipboard"<cr>
+nnoremap <leader>Yd :let @*=expand("%:h")<cr>:echo "Copied file directory to clipboard"<cr>
 
 " keep at least  5 lines above/below cursor (when scrolling)
 set scrolloff=5

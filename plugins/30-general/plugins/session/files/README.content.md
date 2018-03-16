@@ -3,8 +3,8 @@
 
     Extended session management for Vim (`:mksession` on steroids)
 
-    * `,SS` - `:SaveSession`
-    * `,SO` - `:OpenSession`
+    * `<leader>SS` - `:SaveSession`
+    * `<leader>SO` - `:OpenSession`
 
 
     When runnin in a graphical vim:

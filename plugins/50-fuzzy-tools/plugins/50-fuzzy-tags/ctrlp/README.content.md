@@ -1,1 +1,1 @@
-    * `,,` - `:CtrlPTag` - fuzzy find tag
+    * `<leader>ff` - `:CtrlPTag` - fuzzy find tag
