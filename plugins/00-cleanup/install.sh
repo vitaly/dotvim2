@@ -1,6 +1,7 @@
 OLD_FILES="
 vimrc.before gvimrc.before
 vimrc.bindings gvimrc.bindings
+filetype.vim
 "
 COMMON_FILES="
 .gitignore
