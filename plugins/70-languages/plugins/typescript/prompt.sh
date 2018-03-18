@@ -1,1 +1,1 @@
-ask_bool javascript "TypeScript support?"
+ask_bool typescript "TypeScript support?"
