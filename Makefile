@@ -16,11 +16,20 @@ install: configure
 	vim +'call dein#install()'
 
 clean:
+	@echo
+	@echo 'This is going to delete ALL your installed plugins!'
+	@echo
+	@echo 'Press Ctrl-C to stop, ENTER to continue.'
+	@read
+	echo 'continuing'
 	rm -rf ${VIM_DIR}/dein
 
 reinstall: clean configure
 
 update:
+	vim +'call dein#recache_runtimepath()'
+
+upgrade:
 	vim +'call dein#update()'
 
 .PHONY: configure reconfigure install clean reinstall update
