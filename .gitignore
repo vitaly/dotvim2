@@ -3,3 +3,8 @@ todo
 .envrc
 tmp
 tags
+doc/
+GTAGS
+GPATH
+GRTAGS
+.yardoc/

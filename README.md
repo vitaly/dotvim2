@@ -266,8 +266,6 @@ The plugins are loaded according to their sort order.
     *   [tmux-navigator](#tmux-navigator)
 
 *   [Development languages and syntax support](#languages)
-    *   [HTML Support](#html)
-        *   [vim-emmet](#vim-emmet) vim-emmet for highspeed HTML editing
 
     *   [Ruby Support](#ruby)
         *   [vim-bundler](#vim-bundler) bundler integration
@@ -479,11 +477,14 @@ TBD
 
     * `<leader>sq` - `:CtrlPQuickfix` - fuzzy find within quickfix buffer
 
-*   <a name=vim-ag>[vim-ag](https://github.com/rking/ag.vim) ([top](#top))
+*   <a name=vim-ag>[The Silver Searcher](https://github.com/ggreer/the_silver_searcher) ([top](#top))
 
-    Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
+    The Silver Searcher (ag) is a code-searching tool similar to ack, but faster..
+
+    The actual vim integration is provided by [FZF](#fzf)
 
     * `<leader>/` - `:Ag ` - open prompt for entering search term
+
 
 *   <a name=fuzzy-lines>Line search ([top](#top))
 
@@ -633,17 +634,6 @@ TBD
 
 <a name=languages>
 ## Development languages and syntax support
-
-<a name=html>
-### HTML
-
-*   <a name=emmet>[Emmet](https://github.com/mattn/emmet-vim) ([top](#top))
-
-    [emmet.io](http://emmet.io) like html/css workflow plugin.
-
-    *   `<Ctrl-y>,` - expand emmet abbreviation. .e.g try it with `div>p#foo$*3>a`
-
-    > Note: it even works with HAML
 
 <a name=ruby>
 ### Ruby Support

@@ -101,8 +101,9 @@ map Q gq
 " [H]ighlight [W]hitespace
 nmap <silent> <leader>hw :set nolist!<CR>
 
-" search match [H]ighlight [C]lear
-nmap <silent> <leader>hc :silent noh<CR>
+" search match [S]earch [C]lear highlight
+nnoremap <plug>search-clear :silent noh<CR>
+nmap <silent> <leader>sc <plug>search-clear
 
 " switch between 2 last buffers
 nmap <leader><Tab> :b#<CR>

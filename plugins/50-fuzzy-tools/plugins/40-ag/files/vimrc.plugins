@@ -1,2 +1,5 @@
 " smart search
-nmap <leader>/ :Ag<space>
+"
+nnoremap <plug>search-ag :Ag<space>
+nmap <plug>smart-search <plug>search-ag
+nmap <leader>/ <plug>smart-search
