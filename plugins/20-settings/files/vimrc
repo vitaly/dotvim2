@@ -67,11 +67,6 @@ set hlsearch            " Highlight search match
 set ignorecase          " Do case insensitive matching
 set smartcase           " do not ignore if search pattern has CAPS
 
-" omni completion settings
-set ofu=syntaxcomplete#Complete
-let g:rubycomplete_buffer_loading = 0
-let g:rubycomplete_classes_in_global = 1
-
 " directory settings
 call system('mkdir -vp ~/.backup/undo/ > /dev/null 2>&1')
 set backupdir=~/.backup,.       " list of directories for the backup file
@@ -89,7 +84,7 @@ set foldlevel=9
 set nofoldenable        " dont fold by default "
 
 " concealing
-set concealcursor=
+set concealcursor=n
 set conceallevel=2
 
 " extended '%' mapping for if/then/else/end etc
@@ -117,17 +112,7 @@ nmap <leader>n :cn<CR>
 " [P]revious
 nmap <leader>p :cp<CR>
 
-" [D]iff [U]pdate
-nmap <localleader>du :diffupdate<CR>
-" [D]iff [P]ut
-nmap <localleader>dp :diffput<CR>
-" [D]iff [G]et
-nmap <localleader>dg :diffget<CR>
-" [G]it [N]ext
-nmap <localleader>n ]c
-" [G]it [P]rev
-nmap <localleader>p [c
-
+nnoremap <plug>diff-mode-toggle  :set diff!<cr>
 
 " driving me insane this thing
 command Q q

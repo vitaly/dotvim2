@@ -12,6 +12,8 @@ clipboard content, so you end up pasting it all back, duh! :)
 
 And to add insult to the injury, whatever you copied is not on the yank ring history.
 
+Oh, and basting blocks of text no longer work either.
+
 So... I'm still trying to make use of this as I'm all to tired of '"+y', but I
 decided to make this configurable, as not everyone might want to invest the time
 to rewire muscle memory ;)

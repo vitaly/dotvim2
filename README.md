@@ -237,6 +237,9 @@ The plugins are loaded according to their sort order.
         url based hyperlinks for text files
     *   [xterm-color-table](#xterm-color-table)
 
+*   [Completion](#completion)
+    *   [YouCompleteMe](#youcompleteme)
+
 *   [fuzzy search tools](#fuzzy-search)
     *   [unite.vim](#unite.vim)
         *   TBD: other Unite plugins
@@ -250,7 +253,7 @@ The plugins are loaded according to their sort order.
     *   [The Silver Search](#vim-ag)
         `ag` searching integration
     *   [Line search](#fuzzy-lines)
-    *   [Tags search](#fuzzy-tags)
+*   [Tags search](#fuzzy-tags)
     *   [Yank history search](#fuzzy-yank)
 
 *   [Plugins for Developers](#devplugins)
@@ -419,6 +422,10 @@ TBD
     * `#` - yank current color
 
     `:h xterm-color-table.txt` for more help.
+
+
+<a name=completion>
+## Completion
 
 
 <a name=fuzzy-search>
