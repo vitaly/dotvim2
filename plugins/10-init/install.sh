@@ -1,14 +1,8 @@
-function install_dein()
-{
-  mkdir -p ${VIM_DIR}/dein/repos
-
-  local d=${VIM_DIR}/dein/repos/github.com/Shougo/dein.vim
-  [ -d $d ] && return
-
-  mkdir -p $d
-
-  echo installing dein
-  git clone https://github.com/Shougo/dein.vim $d
+function install_plug() {
+  local plug_dir="${VIM_DIR}/autoload/plug.vim"
+  [ -d "$plug_dir" ]  && return
+  echo installing plug
+  curl -fLo ${VIM_DIR}/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
-install_dein
+install_plug

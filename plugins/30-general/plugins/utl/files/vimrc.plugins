@@ -1,6 +1,5 @@
-call dein#add('vim-scripts/utl.vim')
+Plug 'vim-scripts/utl.vim'
 
-" config help: <url:~/.vim/dein/.dein/plugin/utl_rc.vim#r=utl_cfg_hdl_scm_http>
 if has("mac")
   let g:utl_cfg_hdl_scm_http_system = "!open '%u'"
 end

@@ -1,20 +1,20 @@
 " Ruby syntax support
-call dein#add('vim-ruby/vim-ruby')
+Plug 'vim-ruby/vim-ruby'
 
 " A custom text object for selecting ruby blocks (ar/ir)
-call dein#add('kana/vim-textobj-user')
-call dein#add('nelstrom/vim-textobj-rubyblock')
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
 
 " toggle ruby blocks style
-call dein#add('vim-scripts/blockle.vim')
+Plug 'vim-scripts/blockle.vim'
 
 " bundler integration (e.g. :Bopen)
-call dein#add('tpope/vim-bundler')
+Plug 'tpope/vim-bundler'
 
 " rake integration
-call dein#add('tpope/vim-rake')
+Plug 'tpope/vim-rake'
 
 " ruby refactoring
-call dein#add('ecomba/vim-ruby-refactoring')
+Plug 'ecomba/vim-ruby-refactoring'
 
 let g:blockle_mapping = '<localleader>B'

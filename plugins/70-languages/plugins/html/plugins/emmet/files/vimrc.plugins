@@ -1,1 +1,1 @@
-call dein#add('mattn/emmet-vim')
+Plug 'mattn/emmet-vim'

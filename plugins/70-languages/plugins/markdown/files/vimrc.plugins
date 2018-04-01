@@ -1,1 +1,1 @@
-call dein#add('tpope/vim-markdown')
+Plug 'tpope/vim-markdown'

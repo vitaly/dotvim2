@@ -1,4 +1,4 @@
-call dein#add('AndrewRadev/switch.vim')
+Plug 'AndrewRadev/switch.vim'
 
 " making some of the switches defined for ruby work in HAML files
 autocmd FileType haml let b:switch_definitions =

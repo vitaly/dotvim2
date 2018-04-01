@@ -1,4 +1,4 @@
-call dein#add('scrooloose/syntastic')
+Plug 'scrooloose/syntastic'
 
 " TBD: check those setgings with latest plugin version
 let g:syntastic_enable_signs=1

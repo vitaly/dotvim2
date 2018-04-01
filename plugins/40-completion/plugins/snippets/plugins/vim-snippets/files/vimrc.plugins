@@ -1,2 +1,2 @@
-call dein#add('honza/vim-snippets')
+Plug 'honza/vim-snippets'
 

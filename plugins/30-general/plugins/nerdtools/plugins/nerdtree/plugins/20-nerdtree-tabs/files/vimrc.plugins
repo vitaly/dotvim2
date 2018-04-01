@@ -1,4 +1,4 @@
-call dein#add('jistr/vim-nerdtree-tabs')
+Plug 'jistr/vim-nerdtree-tabs'
 
 " nerdtree with tabs
 " display the [F]ile browser [T]ree

@@ -1,4 +1,4 @@
-call dein#add('Valloric/YouCompleteMe', {'build': './install.py --clang-completer --tern-completer'})
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --tern-completer'}
 
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 let g:ycm_add_preview_to_completeopt = 1

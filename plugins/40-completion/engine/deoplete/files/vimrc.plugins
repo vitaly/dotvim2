@@ -1,9 +1,11 @@
-call dein#add('Shougo/deoplete.nvim')
-if !has('nvim')
-  call dein#add('roxma/nvim-yarp')
-  call dein#add('roxma/vim-hug-neovim-rpc')
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
-call dein#add('Shougo/context_filetype.vim')
+Plug 'Shougo/context_filetype.vim'
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1

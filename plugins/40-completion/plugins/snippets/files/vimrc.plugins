@@ -1,4 +1,4 @@
-call dein#add('SirVer/ultisnips')
+Plug 'SirVer/ultisnips'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger="<tab>"

@@ -13,40 +13,32 @@ edit: ${VIM_DIR}/.config
 	@vim ${VIM_DIR}/.config
 
 install: configure
-	vim +'call dein#install()'
+	vim +'PlugInstall'
 
 clean:
-	@echo
-	@echo 'This is going to delete ALL your installed plugins!'
-	@echo
-	@echo 'Press Ctrl-C to stop, ENTER to continue.'
-	@read
-	echo 'continuing'
-	rm -rf ${VIM_DIR}/dein
-
-reinstall: clean configure
+	@you can manually remove directory ${VIM_DIR}/bundle
 
 update:
-	vim +'call dein#recache_runtimepath()'
+	vim +'PlugUpdate'
 
 upgrade:
-	vim +'call dein#update()'
+	vim +'PlugUpgrade'
 
 .PHONY: configure reconfigure install clean reinstall update
 
-YCM_DIR = ${VIM_DIR}/dein/repos/github.com/Valloric/YouCompleteMe
+# YCM_DIR = ${VIM_DIR}/dein/repos/github.com/Valloric/YouCompleteMe
 
-${YCM_DIR}:
-	mkdir -p ${VIM_DIR}/dein/repos/github.com/Valloric
-	cd ${VIM_DIR}/dein/repos/github.com/Valloric
-	git clone https://github.com/Valloric/YouCompleteMe.git YouCompleteMe
+# ${YCM_DIR}:
+	# mkdir -p ${VIM_DIR}/dein/repos/github.com/Valloric
+	# cd ${VIM_DIR}/dein/repos/github.com/Valloric
+	# git clone https://github.com/Valloric/YouCompleteMe.git YouCompleteMe
 
-ycm-git: ${YCM_DIR}
-	cd $< && git submodule update --init --recursive
+# ycm-git: ${YCM_DIR}
+	# cd $< && git submodule update --init --recursive
 
-ycm-install: ycm-git
-	cd ${YCM_DIR} && ./install.py --clang-completer --tern-completer
+# ycm-install: ycm-git
+	# cd ${YCM_DIR} && ./install.py --clang-completer --tern-completer
 
-completion: ycm-install
+# completion: ycm-install
 
-.PHONY: ycm-git ycm-install completion
+# .PHONY: ycm-git ycm-install completion

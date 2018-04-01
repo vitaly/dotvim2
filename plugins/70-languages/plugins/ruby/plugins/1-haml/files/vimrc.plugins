@@ -1,1 +1,1 @@
-call dein#add('tpope/vim-haml')
+Plug 'tpope/vim-haml'

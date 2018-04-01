@@ -63,13 +63,9 @@ change you can see the exact difference.
 > setup configurable. Just look at any `prompt.sh` file inside `plugins`
 > directory. Oh, and **pull requests are welcome ;)**.
 
-### dein
+### Vim-Plug
 
-NeoBundle was replaced with dein. This time around it seems that this time
-around vim plugin managers are ten a penny.
-So I just went with [dein](https://github.com/Shougo/dein.vim), which is the
-replacement from the author of NeoBundle. NeoBundle was fast, Dein supposed to
-be faster still.
+NeoBundle was replaced with dein. Which was now replaced with vim-plug.
 
 ### TBD
 

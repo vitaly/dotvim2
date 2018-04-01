@@ -1,1 +1,1 @@
-call dein#add('airblade/vim-gitgutter')
+Plug 'airblade/vim-gitgutter'

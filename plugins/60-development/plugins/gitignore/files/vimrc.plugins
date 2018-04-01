@@ -1,2 +1,2 @@
 " hide .gitignore-d files from vim
-call dein#add('vitaly/vim-gitignore')
+Plug 'vitaly/vim-gitignore'

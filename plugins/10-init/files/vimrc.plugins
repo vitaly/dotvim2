@@ -1,3 +1,3 @@
-call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/vimproc.vim', {'build': 'make'})
-call dein#add('Shougo/unite.vim')
+Plug 'junegunn/vim-plug'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Shougo/unite.vim'

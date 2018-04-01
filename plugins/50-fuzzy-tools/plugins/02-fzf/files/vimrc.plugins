@@ -1,4 +1,4 @@
-call dein#add('junegunn/fzf.vim')
+Plug 'junegunn/fzf.vim'
 
 if executable("ag") && ('' == $FZF_DEFAULT_COMMAND)
   let $FZF_DEFAULT_COMMAND = "ag --follow --nocolor --nogroup -g ''"

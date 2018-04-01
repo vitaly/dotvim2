@@ -1,2 +1,2 @@
 " replacement for the repeat mapping (.) to support plugins
-call dein#add('tpope/vim-repeat')
+Plug 'tpope/vim-repeat'

@@ -1,4 +1,4 @@
-call dein#add('scrooloose/nerdtree')
+Plug 'scrooloose/nerdtree'
 
 " Tells the NERD tree to respect 'wildignore'.
 let NERDTreeRespectWildIgnore=1

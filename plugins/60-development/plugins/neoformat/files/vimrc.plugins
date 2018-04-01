@@ -1,2 +1,2 @@
-call dein#add('sbdchd/neoformat')
+Plug 'sbdchd/neoformat'
 autocmd BufWritePre *.js Neoformat

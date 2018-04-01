@@ -1,4 +1,4 @@
-call dein#add('Indent-Guides')
+Plug 'Indent-Guides'
 colorscheme default
 
 " indent-guides

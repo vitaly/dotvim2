@@ -1,3 +1,3 @@
-call dein#add('irrationalistic/vim-tasks')
+Plug 'irrationalistic/vim-tasks'
 
 autocmd BufNewFile,BufReadPost todo set filetype=tasks

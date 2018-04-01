@@ -1,18 +1,9 @@
-if &compatible
-  set nocompatible
-endif
+" if &compatible
+  " set nocompatible
+" endif
 
-set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
-
-call dein#begin(expand('~/.vim/dein'))
+call plug#begin('~/.vim/bundle')
 
 source ~/.vim/vimrc.plugins
 
-call dein#end()
-
-filetype plugin indent on
-
-if dein#check_install()
-  echo "installing plugins"
-  call dein#install()
-endif
+call plug#end()

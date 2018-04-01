@@ -1,1 +1,1 @@
-call dein#add('rust-lang/rust.vim')
+Plug 'rust-lang/rust.vim'

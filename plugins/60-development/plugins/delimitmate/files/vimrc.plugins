@@ -1,4 +1,4 @@
-call dein#add('Raimondi/delimitMate')
+Plug 'Raimondi/delimitMate'
 
 " Turns on/off the expansion of <Space>
 let g:delimitMate_expand_space = 1

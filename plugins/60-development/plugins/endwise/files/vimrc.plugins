@@ -1,2 +1,2 @@
 " end certain structures automatically, e.g. begin/end etc.
-call dein#add('tpope/vim-endwise')
+Plug 'tpope/vim-endwise'

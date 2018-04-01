@@ -1,1 +1,1 @@
-call dein#add('lambdatoast/elm.vim')
+Plug 'lambdatoast/elm.vim'
