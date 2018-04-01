@@ -1,0 +1,3 @@
+call dein#add('ervandew/supertab')
+
+let g:SuperTabDefaultCompletionType = '<C-n>'

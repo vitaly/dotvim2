@@ -1,9 +1,4 @@
-call dein#add('ervandew/supertab')
 call dein#add('SirVer/ultisnips')
-call dein#add('honza/vim-snippets')
-
-" make YCM compatible with UltiSnips (using supertab)
-let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger="<tab>"

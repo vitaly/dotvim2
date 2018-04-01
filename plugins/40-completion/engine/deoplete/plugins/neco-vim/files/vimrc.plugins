@@ -1,0 +1,2 @@
+" https://github.com/Shougo/neco-vim
+call dein#add('Shougo/neco-vim')
