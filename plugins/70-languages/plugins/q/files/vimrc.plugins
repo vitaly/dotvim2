@@ -1,4 +1,4 @@
-Plug 'katusk/vim-qkdb-syntax'
+Plug 'vitaly/vim-qkdb-syntax'
 
 function! s:qModeSetup()
   let b:delimitMate_quotes = '"'

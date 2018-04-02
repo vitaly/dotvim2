@@ -1,0 +1,8 @@
+if maparg('<plug>search-tags') != ''
+  nmap <leader>stt <plug>search-tags
+  nmap <leader>tt <plug>search-tags
+endif
+if maparg('<plug>search-buffer-tags') != ''
+  nmap <leader>stb <plug>search-buffer-tags
+  nmap <leader>tb <plug>search-buffer-tags
+endif

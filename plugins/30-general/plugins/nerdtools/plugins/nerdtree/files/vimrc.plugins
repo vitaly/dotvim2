@@ -1,4 +1,4 @@
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeTabsToggle', 'NERDTreeFind'] }
 
 " Tells the NERD tree to respect 'wildignore'.
 let NERDTreeRespectWildIgnore=1

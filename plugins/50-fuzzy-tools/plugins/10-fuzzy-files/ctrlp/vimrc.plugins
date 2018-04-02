@@ -1,5 +1,3 @@
-" [F]ind [F]iles
-let g:ctrlp_map = '<leader>ff'
-let g:ctrlp_cmd = 'CtrlP'
-
-nmap <leader>fF :CtrlPClearCache<cr>:CtrlP<cr>
+map <plug>fuzzy-file(find) <plug>(ctrlp)
+map <plug>fuzzy-file(clear-cache) :CtrlPClearCache<cr>
+map <plug>fuzzy-file(no-cache) <plug>fuzzy-file(clear-cache)<plug>fuzzy-file(find)

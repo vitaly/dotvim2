@@ -1,2 +1,2 @@
 " [S]earch [T]ags
-nmap <plug>search-tags :CtrlPTag<cr>
+map <plug>search-tags :CtrlPTag<cr>

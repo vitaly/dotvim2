@@ -1,7 +1,7 @@
-Plug 'jistr/vim-nerdtree-tabs'
+Plug 'jistr/vim-nerdtree-tabs', {'on':  ['NERDTreeToggle', 'NERDTreeTabsToggle', 'NERDTreeFind'] }
 
 " nerdtree with tabs
 " display the [F]ile browser [T]ree
-nmap <leader>ft :NERDTreeTabsToggle<CR>
+map <plug>file-tree(toggle) :NERDTreeTabsToggle<CR>
 " show current file in the tree
-nmap <leader>0 :NERDTreeFind<CR>
+map <plug>file-tree(find) :NERDTreeFind<CR>

@@ -1,2 +1,1 @@
-" [F]ind [F]iles
-nmap <leader>ff :Files<cr>
+map <plug>fuzzy-file(find) :Files<cr>

@@ -97,8 +97,8 @@ map Q gq
 nmap <silent> <leader>hw :set nolist!<CR>
 
 " search match [S]earch [C]lear highlight
-nnoremap <plug>search-clear :silent noh<CR>
-nmap <silent> <leader>sc <plug>search-clear
+noremap <plug>search(clear) :silent noh<CR>
+nmap <silent> <leader>sc <plug>search(clear)
 
 " switch between 2 last buffers
 nmap <leader><Tab> :b#<CR>
@@ -112,7 +112,7 @@ nmap <leader>n :cn<CR>
 " [P]revious
 nmap <leader>p :cp<CR>
 
-nnoremap <plug>diff-mode-toggle  :set diff!<cr>
+noremap <plug>diff-mode(toggle)  :set diff!<cr>
 
 " driving me insane this thing
 command Q q

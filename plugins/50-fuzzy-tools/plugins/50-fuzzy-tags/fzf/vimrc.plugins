@@ -1,2 +1,2 @@
-nmap <plug>search-tags :Tags<cr>
-nmap <plug>search-buffer-tags :BTags<cr>
+map <plug>search-tags :Tags<cr>
+map <plug>search-buffer-tags :BTags<cr>
