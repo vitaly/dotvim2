@@ -2,7 +2,9 @@ Plug 'katusk/vim-qkdb-syntax'
 
 function! s:qModeSetup()
   let b:delimitMate_quotes = '"'
-  set foldmethod=indent
+  if !&diff
+    set foldmethod=indent
+  endif
 endfunction
 augroup qmodesetup
   au!
