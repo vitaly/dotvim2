@@ -8,7 +8,7 @@ ASK_VERBOSE="$VERBOSE"
 
 source vendor/ask.sh/lib/ask.sh
 
-function non_plug_difr()
+function non_dotvim2_dir()
 {
   [ -d "$VIM_DIR" -a ! -d "$VIM_DIR/bundle" ]
 }
