@@ -1,2 +1,3 @@
 " [E]val [L]ine
-map <localleader>ee yy:@"<CR>
+nmap <buffer> <localleader>ee yy:@"<CR>
+nmap <buffer> <localleader>rr :so %<cr>
