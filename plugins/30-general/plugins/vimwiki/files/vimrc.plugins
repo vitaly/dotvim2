@@ -1,0 +1,2 @@
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+let g:vimwiki_folding = "list"
