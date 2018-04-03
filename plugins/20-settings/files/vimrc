@@ -93,15 +93,17 @@ runtime macros/matchit.vim
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
-" [H]ighlight [W]hitespace
-nmap <silent> <leader>hw :set nolist!<CR>
+" [T]oggle [W]hitespace highlight
+nmap <plug>toggle(whitespace) :set nolist!<CR>
+nmap <silent> <leader>Tw <plug>toggle(whitespace)
 
-" search match [S]earch [C]lear highlight
-noremap <plug>search(clear) :silent noh<CR>
-nmap <silent> <leader>sc <plug>search(clear)
+" [T]oggle [S]earch highlight
+noremap <plug>toggle(search-highlight) :silent noh<CR>
+nmap <silent> <leader>Ts <plug>toggle(search-highlight)
 
 " switch between 2 last buffers
-nmap <leader><Tab> :b#<CR>
+noremap <plug>buffer(last) :b#<CR>
+nmap <leader><Tab> <plug>buffer(last)
 
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>

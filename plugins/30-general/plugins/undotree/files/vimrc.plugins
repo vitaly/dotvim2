@@ -2,3 +2,4 @@ Plug 'mbbill/undotree'
 
 nmap <leader>u :UndotreeToggle<CR>
 "g:undotree_SetFocusWhenToggle
+nmap g= :later<cr>
