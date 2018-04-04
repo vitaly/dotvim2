@@ -1,0 +1,8 @@
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+let g:airline_powerline_fonts=1
+let g:airline_theme='cool' " dark simple badwolf solarized solarized2
+set noshowmode
+
+noremap <plug>toggle(statusline) :AirlineToggle<cr>

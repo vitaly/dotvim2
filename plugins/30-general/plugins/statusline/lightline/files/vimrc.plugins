@@ -1,0 +1,3 @@
+Plug 'itchyny/lightline.vim'
+noremap <plug>toggle(statusline) :call lightline#toggle()<cr>
+set noshowmode
