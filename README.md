@@ -262,7 +262,6 @@ The plugins are loaded according to their sort order.
     *   [vim-gitgutter](#gitgutter)
         git diff in the gutter (sign column) and stages/reverts hunks
     *   [vim-surround](#vim-surround)
-    *   [syntastic](#syntastic) syntax checking on save
     *   [tmux-navigator](#tmux-navigator)
 
 *   [Development languages and syntax support](#languages)
@@ -611,14 +610,6 @@ TBD
     * `ysMovementX` - surround movement with X
 
     You should REALLY read the docs if you want to use this one
-
-*   <a name=syntastic>[syntastic](http://github.com/scrooloose/syntastic) ([top](#top))
-
-    syntax checking plugin
-
-    it will display the number of syntax errors in the current file in the vim's status line.
-
-    * use `:Errors` to display a window detailing the errors
 
 *   <a name=tmux-navigator>[tmux-navigator](http://github.com/christoomey/vim-tmux-navigator) ([top](#top))
 
