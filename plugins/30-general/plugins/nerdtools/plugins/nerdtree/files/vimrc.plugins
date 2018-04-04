@@ -2,3 +2,4 @@ Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeTabsToggle', 'N
 
 " Tells the NERD tree to respect 'wildignore'.
 let NERDTreeRespectWildIgnore=1
+let NERDTreeCascadeSingleChildDir=0
