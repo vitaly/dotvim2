@@ -1,3 +1,0 @@
-Plug 'kchmck/vim-coffee-script'
-Plug 'vitaly/vim-literate-coffeescript'
-Plug 'mtscout6/vim-cjsx'
