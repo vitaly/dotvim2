@@ -1,5 +1,6 @@
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/Merginal'
+Plug 'tpope/vim-rhubarb'
 
 " [G]it [G]grep
 nmap <leader>gg :silent Ggrep<space>
