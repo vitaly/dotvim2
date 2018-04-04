@@ -7,4 +7,5 @@ if executable('ag')
   let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '-g', '']
 endif
 
-nmap <leader>O :Unite -start-insert -no-split -buffer-name=Outline outline<cr>
+nmap <plug>show(outline) :Unite -start-insert -no-split -buffer-name=Outline outline<cr>
+nmap <leader>O <plug>show(outline)
