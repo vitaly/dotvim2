@@ -1,0 +1,1 @@
+Plug 'ludovicchabant/vim-gutentags'
