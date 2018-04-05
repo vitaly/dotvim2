@@ -1,1 +1,1 @@
-nmap <leader>bb :CtrlPBuff<cr>
+noremap <plug>fuzzy(buffer) :CtrlPBuff<cr>

@@ -1,1 +1,1 @@
-nmap <leader>bb :Unite -start-insert -no-split -buffer-name=buffer buffer<cr>
+noremap <plug>fuzzy(buffer) :Unite -start-insert -no-split -buffer-name=buffer buffer<cr>

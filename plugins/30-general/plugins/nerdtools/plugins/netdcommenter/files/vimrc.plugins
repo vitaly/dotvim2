@@ -4,5 +4,6 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDSpaceDelims = 1
 
 " invert comment on the current line/selection
-nmap <leader>; <Plug>NERDCommenterInvert
-vmap <leader>; <Plug>NERDCommenterInvert
+nmap <plug>comment(invert) <Plug>NERDCommenterInvert
+nmap <leader>; <plug>comment(invert)
+vmap <leader>; <plug>comment(invert)
