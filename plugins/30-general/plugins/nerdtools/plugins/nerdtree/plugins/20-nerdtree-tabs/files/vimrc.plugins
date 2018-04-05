@@ -1,4 +1,4 @@
-Plug 'jistr/vim-nerdtree-tabs', {'on':  ['NERDTreeToggle', 'NERDTreeTabsToggle', 'NERDTreeFind'] }
+Plug 'jistr/vim-nerdtree-tabs'
 
 " nerdtree with tabs
 " display the [F]ile browser [T]ree
