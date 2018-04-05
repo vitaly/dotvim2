@@ -3,20 +3,20 @@ Plug 'vim-scripts/Merginal'
 Plug 'tpope/vim-rhubarb'
 
 " [G]it [G]grep
-nmap <plug>git(grep) :silent Ggrep<space>
+noremap <plug>git(grep) :silent Ggrep<space>
 nmap <leader>gg <plug>git(grep)
 
 " [G]rep [W]ord
 " for global git search for word under the cursor (with highlight)
-nmap <plug>git(grep-word) :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:cw<CR><CR>
-nmap <leader>gw <plug>git-grep(word)
+noremap <plug>git(grep-word) :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:cw<CR><CR>
+nmap <leader>gw <plug>git(grep-word)
 
 " [G]rep current selection in visual mode
-vmap <plug>git(grep-selection) y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
-vmap <leader>g <plug>git-grep(selection)
+noremap <plug>git(grep-selection) y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
+vmap <leader>g <plug>git(grep-selection)
 
-nmap <plug>git(status) :Gstatus<CR>
+noremap <plug>git(status) :Gstatus<CR>
 nmap <leader>gs  <plug>git(status)
 
-nmap <plug>git(diff) :Gdiff<CR>
+noremap <plug>git(diff) :Gdiff<CR>
 nmap <leader>gd  <plug>git(diff)
