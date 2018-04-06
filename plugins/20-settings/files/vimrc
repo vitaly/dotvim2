@@ -94,7 +94,7 @@ runtime macros/matchit.vim
 map Q gq
 
 " [T]oggle [W]hitespace highlight
-nmap <plug>toggle(whitespace) :set nolist!<CR>
+map <plug>toggle(whitespace) :set nolist!<CR>
 nmap <silent> <leader>Tw <plug>toggle(whitespace)
 
 " [T]oggle [S]earch highlight
