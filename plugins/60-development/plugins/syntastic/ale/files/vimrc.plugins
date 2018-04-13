@@ -1,1 +1,5 @@
 Plug 'w0rp/ale'
+
+if exists('g:status_line_plugin') && 'lightline' == g:status_line_plugin
+  Plug 'maximbaz/lightline-ale'
+endif

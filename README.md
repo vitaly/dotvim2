@@ -224,8 +224,6 @@ The plugins are loaded according to their sort order.
         Use the repeat command "." with supported plugins
     *   [vim-session](#vim-session)
         Extended session management for Vim (:mksession on steroids)
-    *   [vim-airline](#airline)
-        better looking statusline
     *   [vim-switch](#vim-switch)
         Simple Vim plugin to switch segments of text with predefined replacements.
     *   [UndoTree](#undotree)
@@ -366,16 +364,6 @@ TBD
     When runnin in a graphical vim:
 
     * `:RestartVim<CR>` - This command saves your current editing session, restarts Vim and restores your editing session.
-
-*   <a name=airline>[vim-airline](https://github.com/bling/vim-airline) ([top](#top))
-
-    Lean & mean status/tabline for vim that's light as air.
-
-    A better replacement for vim-powerline. Optimized for speed; it loads in
-    under a millisecond.
-
-    [Install fonts](https://github.com/bling/vim-airline#integrating-with-powerline-fonts)
-    for best results.
 
 *   <a name=vim-switch>[vim-switch](https://github.com/AndrewRadev/switch.vim) ([top](#top))
 
