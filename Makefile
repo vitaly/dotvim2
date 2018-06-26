@@ -13,7 +13,7 @@ edit: ${VIM_DIR}/.config
 	@vim ${VIM_DIR}/.config
 
 install: configure
-	vim +'PlugInstall'
+	vim +'PlugInstall' +qa
 
 clean:
 	@you can manually remove directory ${VIM_DIR}/bundle

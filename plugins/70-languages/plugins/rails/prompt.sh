@@ -1,1 +1,1 @@
-ask_bool rails "Ruby on Rails support?"
+ask_bool ruby "Ruby/Rails support?" y

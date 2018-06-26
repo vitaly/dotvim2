@@ -1,2 +1,4 @@
 Plug 'sbdchd/neoformat'
-autocmd BufWritePre *.js Neoformat
+
+command! AutoFormat au BufWritePre <buffer> Neoformat
+command! NoAutoFormat au! BufWritePre <buffer>

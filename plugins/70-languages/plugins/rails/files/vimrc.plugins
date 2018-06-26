@@ -1,14 +1,17 @@
 " Rails support
-Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails', {'for': 'ruby'}
 
 " apidock.com docs integration
-Plug 'vim-scripts/apidock.vim'
+Plug 'vitaly/apidock.vim', {'for': 'ruby'}
 
 " lightweight Rspec runner for Vim
-Plug 'thoughtbot/vim-rspec'
+Plug 'thoughtbot/vim-rspec', {'for': 'ruby'}
 
 " Rails i18n extraction plugin
-Plug 'stefanoverna/vim-i18n'
+Plug 'stefanoverna/vim-i18n', {'for': 'ruby'}
+
+Plug 'ecomba/vim-ruby-refactoring', {'for': 'ruby'}
 
 " vim-[R]spec
-map <localleader>r :call RunNearestSpec()<CR>
+map <plug>rspec(nearest) :call RunNearestSpec()<CR>
+" map <localleader>r <plug>rspec(nearest)
