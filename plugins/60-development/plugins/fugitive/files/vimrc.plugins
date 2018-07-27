@@ -1,5 +1,5 @@
 call dein#add('tpope/vim-fugitive')
-call dein#add('Merginal')
+call dein#add('vim-scripts/Merginal')
 
 " ,g for Ggrep
 nmap <leader>g :silent Ggrep<space>
