@@ -1,0 +1,4 @@
+call dein#add('mbbill/undotree')
+
+nmap <leader>u :UndotreeToggle<CR>
+"g:undotree_SetFocusWhenToggle

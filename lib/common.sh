@@ -88,7 +88,7 @@ function _copy_files()
   v blue $base
 
   for f in $(cd "$base" && find . -type f); do
-    cat "$base/$f" | append_to_file "$f" "$base"
+    cat "$base/$f" | append_to_file "$f" "$base/$(basename $f)"
   done
 }
 

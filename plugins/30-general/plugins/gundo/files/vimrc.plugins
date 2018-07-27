@@ -1,5 +1,0 @@
-call dein#add('sjl/gundo.vim')
-
-let g:gundo_close_on_revert = 1
-
-nmap <leader>u :GundoToggle<CR>
